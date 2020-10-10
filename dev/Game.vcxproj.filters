@@ -33,6 +33,12 @@
     <ClCompile Include="info.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="m_fixed.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="i_system.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">
@@ -78,6 +84,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="d_think.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="m_fixed.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="i_system.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
