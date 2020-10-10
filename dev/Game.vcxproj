@@ -145,6 +145,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="i_main.c" />
+    <ClCompile Include="m_argv.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="doomdef.h" />
+    <ClInclude Include="m_argv.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

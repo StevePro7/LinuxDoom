@@ -18,5 +18,16 @@
     <ClCompile Include="i_main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="m_argv.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="doomdef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="m_argv.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
