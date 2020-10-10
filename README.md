@@ -45,3 +45,7 @@ Linux Doom
 id software
 E:\GitHub\StevePro7\Blogger\Doom\linuxdoom-1.10
 D:\Github\id-software\DOOM\linuxdoom-1.10
+
+
+Entry point
+i_main.c
