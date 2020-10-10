@@ -75,6 +75,9 @@
     <ClCompile Include="i_sound.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="i_video.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">
@@ -165,6 +168,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="i_sound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="hu_stuff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
