@@ -296,5 +296,20 @@
     <ClInclude Include="hu_lib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="m_cheat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="m_menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p_saveg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p_setup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p_spec.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

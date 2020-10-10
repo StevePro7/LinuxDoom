@@ -211,7 +211,9 @@
     <ClInclude Include="main.h" />
     <ClInclude Include="m_argv.h" />
     <ClInclude Include="m_bbox.h" />
+    <ClInclude Include="m_cheat.h" />
     <ClInclude Include="m_fixed.h" />
+    <ClInclude Include="m_menu.h" />
     <ClInclude Include="m_misc.h" />
     <ClInclude Include="m_random.h" />
     <ClInclude Include="m_swap.h" />
@@ -219,6 +221,9 @@
     <ClInclude Include="p_local.h" />
     <ClInclude Include="p_mobj.h" />
     <ClInclude Include="p_pspr.h" />
+    <ClInclude Include="p_saveg.h" />
+    <ClInclude Include="p_setup.h" />
+    <ClInclude Include="p_spec.h" />
     <ClInclude Include="p_tick.h" />
     <ClInclude Include="r_bsp.h" />
     <ClInclude Include="r_data.h" />

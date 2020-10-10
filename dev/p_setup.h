@@ -15,13 +15,13 @@
 // for more details.
 //
 // DESCRIPTION:
-//	Refresh module, drawing LineSegs from BSP.
+//   Setup a game, startup stuff.
 //
 //-----------------------------------------------------------------------------
 
 
-#ifndef __R_SEGS__
-#define __R_SEGS__
+#ifndef __P_SETUP__
+#define __P_SETUP__
 
 
 #ifdef __GNUG__
@@ -29,12 +29,16 @@
 #endif
 
 
+// NOT called by W_Ticker. Fixme.
 void
-R_RenderMaskedSegRange
-( drawseg_t*	ds,
-	int		x1,
-	int		x2 );
+P_SetupLevel
+( int		episode,
+	int		map,
+	int		playermask,
+	skill_t	skill );
 
+// Called by startup code.
+void P_Init( void );
 
 #endif
 //-----------------------------------------------------------------------------
