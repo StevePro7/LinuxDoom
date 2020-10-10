@@ -237,6 +237,7 @@
     <ClInclude Include="r_state.h" />
     <ClInclude Include="r_things.h" />
     <ClInclude Include="sounds.h" />
+    <ClInclude Include="st_lib.h" />
     <ClInclude Include="st_stuff.h" />
     <ClInclude Include="s_sound.h" />
     <ClInclude Include="tables.h" />
