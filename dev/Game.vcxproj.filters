@@ -144,6 +144,9 @@
     <ClCompile Include="doomdef.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="f_finale.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">

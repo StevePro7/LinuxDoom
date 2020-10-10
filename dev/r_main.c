@@ -1,3 +1,5 @@
+#pragma warning(disable : 4146)
+
 //// Emacs style mode select   -*- C++ -*- 
 ////-----------------------------------------------------------------------------
 ////
@@ -898,3 +900,108 @@ fixed_t*		finecosine = &finesine[ FINEANGLES / 4 ];
 //	// Check for new console commands.
 //	NetUpdate();
 //}
+
+
+fixed_t			viewx;
+fixed_t			viewy;
+//fixed_t			viewz;
+
+
+angle_t
+R_PointToAngle
+( fixed_t	x,
+	fixed_t	y )
+{
+	x -= viewx;
+	y -= viewy;
+
+	if( ( !x ) && ( !y ) )
+		return 0;
+
+	if( x >= 0 )
+	{
+		// x >=0
+		if( y >= 0 )
+		{
+			// y>= 0
+
+			if( x > y )
+			{
+				// octant 0
+				return tantoangle[ SlopeDiv( y, x ) ];
+			}
+			else
+			{
+				// octant 1
+				return ANG90 - 1 - tantoangle[ SlopeDiv( x, y ) ];
+			}
+		}
+		else
+		{
+			// y<0
+			y = -y;
+
+			if( x > y )
+			{
+				// octant 8
+				return -tantoangle[ SlopeDiv( y, x ) ];
+			}
+			else
+			{
+				// octant 7
+				return ANG270 + tantoangle[ SlopeDiv( x, y ) ];
+			}
+		}
+	}
+	else
+	{
+		// x<0
+		x = -x;
+
+		if( y >= 0 )
+		{
+			// y>= 0
+			if( x > y )
+			{
+				// octant 3
+				return ANG180 - 1 - tantoangle[ SlopeDiv( y, x ) ];
+			}
+			else
+			{
+				// octant 2
+				return ANG90 + tantoangle[ SlopeDiv( x, y ) ];
+			}
+		}
+		else
+		{
+			// y<0
+			y = -y;
+
+			if( x > y )
+			{
+				// octant 4
+				return ANG180 + tantoangle[ SlopeDiv( y, x ) ];
+			}
+			else
+			{
+				// octant 5
+				return ANG270 - 1 - tantoangle[ SlopeDiv( x, y ) ];
+			}
+		}
+	}
+	return 0;
+}
+
+
+angle_t
+R_PointToAngle2
+( fixed_t	x1,
+	fixed_t	y1,
+	fixed_t	x2,
+	fixed_t	y2 )
+{
+	viewx = x1;
+	viewy = y1;
+
+	return R_PointToAngle( x2, y2 );
+}

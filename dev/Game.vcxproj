@@ -151,6 +151,7 @@
     <ClCompile Include="d_items.c" />
     <ClCompile Include="d_main.c" />
     <ClCompile Include="d_net.c" />
+    <ClCompile Include="f_finale.c" />
     <ClCompile Include="g_game.c" />
     <ClCompile Include="info.c" />
     <ClCompile Include="i_main.c" />
