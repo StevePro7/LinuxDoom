@@ -161,6 +161,10 @@
     <ClCompile Include="m_random.c" />
     <ClCompile Include="m_swap.c" />
     <ClCompile Include="p_tick.c" />
+    <ClCompile Include="r_data.c" />
+    <ClCompile Include="r_plane.c" />
+    <ClCompile Include="r_segs.c" />
+    <ClCompile Include="r_sky.c" />
     <ClCompile Include="sounds.c" />
     <ClCompile Include="tables.c" />
     <ClCompile Include="wi_stuff.c" />
@@ -196,7 +200,16 @@
     <ClInclude Include="m_random.h" />
     <ClInclude Include="m_swap.h" />
     <ClInclude Include="p_inter.h" />
+    <ClInclude Include="p_local.h" />
+    <ClInclude Include="p_mobj.h" />
     <ClInclude Include="p_tick.h" />
+    <ClInclude Include="r_data.h" />
+    <ClInclude Include="r_defs.h" />
+    <ClInclude Include="r_local.h" />
+    <ClInclude Include="r_plane.h" />
+    <ClInclude Include="r_segs.h" />
+    <ClInclude Include="r_sky.h" />
+    <ClInclude Include="r_state.h" />
     <ClInclude Include="sounds.h" />
     <ClInclude Include="tables.h" />
     <ClInclude Include="wi_stuff.h" />

@@ -81,6 +81,18 @@
     <ClCompile Include="i_net.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="r_sky.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="r_segs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="r_plane.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="r_data.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">
@@ -183,6 +195,33 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="i_net.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="r_sky.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="r_data.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="r_local.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="r_segs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="r_defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p_mobj.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="r_plane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="p_local.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="r_state.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
