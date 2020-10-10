@@ -151,10 +151,15 @@
     <ClCompile Include="info.c" />
     <ClCompile Include="i_main.c" />
     <ClCompile Include="i_system.c" />
+    <ClCompile Include="main.c" />
     <ClCompile Include="m_argv.c" />
     <ClCompile Include="m_fixed.c" />
     <ClCompile Include="m_misc.c" />
     <ClCompile Include="m_random.c" />
+    <ClCompile Include="m_swap.c" />
+    <ClCompile Include="p_tick.c" />
+    <ClCompile Include="wi_stuff.c" />
+    <ClCompile Include="w_wad.c" />
     <ClCompile Include="z_zone.c" />
   </ItemGroup>
   <ItemGroup>
@@ -174,11 +179,16 @@
     <ClInclude Include="d_ticcmd.h" />
     <ClInclude Include="info.h" />
     <ClInclude Include="i_system.h" />
+    <ClInclude Include="main.h" />
     <ClInclude Include="m_argv.h" />
     <ClInclude Include="m_fixed.h" />
     <ClInclude Include="m_misc.h" />
     <ClInclude Include="m_random.h" />
+    <ClInclude Include="m_swap.h" />
     <ClInclude Include="p_inter.h" />
+    <ClInclude Include="p_tick.h" />
+    <ClInclude Include="wi_stuff.h" />
+    <ClInclude Include="w_wad.h" />
     <ClInclude Include="z_zone.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
