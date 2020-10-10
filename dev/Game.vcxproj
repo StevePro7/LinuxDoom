@@ -144,11 +144,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="d_main.c" />
     <ClCompile Include="i_main.c" />
     <ClCompile Include="m_argv.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h" />
+    <ClInclude Include="doomtype.h" />
+    <ClInclude Include="d_event.h" />
+    <ClInclude Include="d_main.h" />
     <ClInclude Include="m_argv.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
