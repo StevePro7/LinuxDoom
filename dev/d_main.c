@@ -1,34 +1,8 @@
-// Emacs style mode select   -*- C++ -*- 
-//-----------------------------------------------------------------------------
-//
-// $Id:$
-//
-// Copyright (C) 1993-1996 by id Software, Inc.
-//
-// This source is available for distribution and/or modification
-// only under the terms of the DOOM Source Code License as
-// published by id Software. All rights reserved.
-//
-// The source is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License
-// for more details.
-//
-// $Log:$
-//
-// DESCRIPTION:
-//	DOOM main program (D_DoomMain) and game loop (D_DoomLoop),
-//	plus functions to determine game mode (shareware, registered),
-//	parse command line parameters, configure game parameters (turbo),
-//	and call the startup functions.
-//
-//-----------------------------------------------------------------------------
-
-
 static const char rcsid[] = "$Id: d_main.c,v 1.8 1997/02/03 22:45:09 b1 Exp $";
 
 #define	BGCOLOR		7
 #define	FGCOLOR		8
+
 
 
 #ifdef NORMALUNIX
@@ -41,10 +15,14 @@ static const char rcsid[] = "$Id: d_main.c,v 1.8 1997/02/03 22:45:09 b1 Exp $";
 #endif
 
 
-//#include "doomdef.h"
-//#include "doomstat.h"
+#include "d_main.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "doomdef.h"
+#include "doomstat.h"
 //
-//#include "dstrings.h"
+#include "dstrings.h"
 //#include "sounds.h"
 //
 //
@@ -56,7 +34,7 @@ static const char rcsid[] = "$Id: d_main.c,v 1.8 1997/02/03 22:45:09 b1 Exp $";
 //#include "f_finale.h"
 //#include "f_wipe.h"
 //
-//#include "m_argv.h"
+#include "m_argv.h"
 //#include "m_misc.h"
 //#include "m_menu.h"
 //
@@ -75,7 +53,7 @@ static const char rcsid[] = "$Id: d_main.c,v 1.8 1997/02/03 22:45:09 b1 Exp $";
 //#include "r_local.h"
 
 
-#include "d_main.h"
+
 
 //
 // D-DoomLoop()
@@ -109,12 +87,12 @@ boolean		singletics = false; // debug flag to cancel adaptiveness
 
 extern  boolean	inhelpscreens;
 
-//skill_t		startskill;
+skill_t		startskill;
 int             startepisode;
 int		startmap;
 boolean		autostart;
 
-//FILE*		debugfile;
+FILE*		debugfile;
 
 boolean		advancedemo;
 
@@ -125,7 +103,7 @@ char		wadfile[ 1024 ];		// primary wad file
 char		mapdir[ 1024 ];           // directory of development maps
 char		basedefault[ 1024 ];      // default file
 
-//
+
 //void D_CheckNetGame( void );
 //void D_ProcessEvents( void );
 //void G_BuildTiccmd( ticcmd_t* cmd );
@@ -154,12 +132,269 @@ void D_DoomLoop( void )
 }
 
 
+//
+// D_AddFile
+//
+void D_AddFile( char *file )
+{
+	int     numwadfiles;
+	char    *newfile;
+
+	for( numwadfiles = 0; wadfiles[ numwadfiles ]; numwadfiles++ )
+		;
+
+	newfile = malloc( strlen( file ) + 1 );
+	strcpy( newfile, file );
+
+	wadfiles[ numwadfiles ] = newfile;
+}
+
+
+//
+// IdentifyVersion
+// Checks availability of IWAD files by name,
+// to determine whether registered/commercial features
+// should be executed (notably loading PWAD's).
+//
+void IdentifyVersion( void )
+{
+	char*	doom1wad;
+	char*	doomwad;
+	char*	doomuwad;
+	char*	doom2wad;
+
+	char*	doom2fwad;
+	char*	plutoniawad;
+	char*	tntwad;
+
+#ifdef NORMALUNIX
+	char *home;
+	char *doomwaddir;
+	doomwaddir = getenv( "DOOMWADDIR" );
+	if( !doomwaddir )
+		doomwaddir = ".";
+
+	// Commercial.
+	doom2wad = malloc( strlen( doomwaddir ) + 1 + 9 + 1 );
+	sprintf( doom2wad, "%s/doom2.wad", doomwaddir );
+
+	// Retail.
+	doomuwad = malloc( strlen( doomwaddir ) + 1 + 8 + 1 );
+	sprintf( doomuwad, "%s/doomu.wad", doomwaddir );
+
+	// Registered.
+	doomwad = malloc( strlen( doomwaddir ) + 1 + 8 + 1 );
+	sprintf( doomwad, "%s/doom.wad", doomwaddir );
+
+	// Shareware.
+	doom1wad = malloc( strlen( doomwaddir ) + 1 + 9 + 1 );
+	sprintf( doom1wad, "%s/doom1.wad", doomwaddir );
+
+	// Bug, dear Shawn.
+	// Insufficient malloc, caused spurious realloc errors.
+	plutoniawad = malloc( strlen( doomwaddir ) + 1 +/*9*/12 + 1 );
+	sprintf( plutoniawad, "%s/plutonia.wad", doomwaddir );
+
+	tntwad = malloc( strlen( doomwaddir ) + 1 + 9 + 1 );
+	sprintf( tntwad, "%s/tnt.wad", doomwaddir );
+
+
+	// French stuff.
+	doom2fwad = malloc( strlen( doomwaddir ) + 1 + 10 + 1 );
+	sprintf( doom2fwad, "%s/doom2f.wad", doomwaddir );
+
+	home = getenv( "HOME" );
+	if( !home )
+		I_Error( "Please set $HOME to your home directory" );
+	sprintf( basedefault, "%s/.doomrc", home );
+#endif
+
+	if( M_CheckParm( "-shdev" ) )
+	{
+		gamemode = shareware;
+		devparm = true;
+		D_AddFile( DEVDATA"doom1.wad" );
+		D_AddFile( DEVMAPS"data_se/texture1.lmp" );
+		D_AddFile( DEVMAPS"data_se/pnames.lmp" );
+		strcpy( basedefault, DEVDATA"default.cfg" );
+		return;
+	}
+
+	if( M_CheckParm( "-regdev" ) )
+	{
+		gamemode = registered;
+		devparm = true;
+		D_AddFile( DEVDATA"doom.wad" );
+		D_AddFile( DEVMAPS"data_se/texture1.lmp" );
+		D_AddFile( DEVMAPS"data_se/texture2.lmp" );
+		D_AddFile( DEVMAPS"data_se/pnames.lmp" );
+		strcpy( basedefault, DEVDATA"default.cfg" );
+		return;
+	}
+
+	if( M_CheckParm( "-comdev" ) )
+	{
+		gamemode = commercial;
+		devparm = true;
+		/* I don't bother
+		if(plutonia)
+		D_AddFile (DEVDATA"plutonia.wad");
+		else if(tnt)
+		D_AddFile (DEVDATA"tnt.wad");
+		else*/
+		D_AddFile( DEVDATA"doom2.wad" );
+
+		D_AddFile( DEVMAPS"cdata/texture1.lmp" );
+		D_AddFile( DEVMAPS"cdata/pnames.lmp" );
+		strcpy( basedefault, DEVDATA"default.cfg" );
+		return;
+	}
+
+	//if( !access( doom2fwad, R_OK ) )
+	//{
+	//	gamemode = commercial;
+	//	// C'est ridicule!
+	//	// Let's handle languages in config files, okay?
+	//	language = french;
+	//	printf( "French version\n" );
+	//	D_AddFile( doom2fwad );
+	//	return;
+	//}
+
+	//if( !access( doom2wad, R_OK ) )
+	//{
+	//	gamemode = commercial;
+	//	D_AddFile( doom2wad );
+	//	return;
+	//}
+
+	//if( !access( plutoniawad, R_OK ) )
+	//{
+	//	gamemode = commercial;
+	//	D_AddFile( plutoniawad );
+	//	return;
+	//}
+
+	//if( !access( tntwad, R_OK ) )
+	//{
+	//	gamemode = commercial;
+	//	D_AddFile( tntwad );
+	//	return;
+	//}
+
+	//if( !access( doomuwad, R_OK ) )
+	//{
+	//	gamemode = retail;
+	//	D_AddFile( doomuwad );
+	//	return;
+	//}
+
+	//if( !access( doomwad, R_OK ) )
+	//{
+	//	gamemode = registered;
+	//	D_AddFile( doomwad );
+	//	return;
+	//}
+
+	//if( !access( doom1wad, R_OK ) )
+	//{
+	//	gamemode = shareware;
+	//	D_AddFile( doom1wad );
+	//	return;
+	//}
+
+	//printf( "Game mode indeterminate.\n" );
+	//gamemode = indetermined;
+
+	// We don't abort. Let's see what the PWAD contains.
+	//exit(1);
+	//I_Error ("Game mode indeterminate\n");
+}
+
+//
+// Find a Response File
+//
+void FindResponseFile( void )
+{
+	int             i;
+#define MAXARGVS        100
+
+	for( i = 1; i < myargc; i++ )
+		if( myargv[ i ][ 0 ] == '@' )
+		{
+			FILE *          handle;
+			int             size;
+			int             k;
+			int             index;
+			int             indexinfile;
+			char    *infile;
+			char    *file;
+			char    *moreargs[ 20 ];
+			char    *firstargv;
+
+			// READ THE RESPONSE FILE INTO MEMORY
+			handle = fopen( &myargv[ i ][ 1 ], "rb" );
+			if( !handle )
+			{
+				printf( "\nNo such response file!" );
+				exit( 1 );
+			}
+			printf( "Found response file %s!\n", &myargv[ i ][ 1 ] );
+			fseek( handle, 0, SEEK_END );
+			size = ftell( handle );
+			fseek( handle, 0, SEEK_SET );
+			file = malloc( size );
+			fread( file, size, 1, handle );
+			fclose( handle );
+
+			// KEEP ALL CMDLINE ARGS FOLLOWING @RESPONSEFILE ARG
+			for( index = 0, k = i + 1; k < myargc; k++ )
+				moreargs[ index++ ] = myargv[ k ];
+
+			firstargv = myargv[ 0 ];
+			myargv = malloc( sizeof( char * )*MAXARGVS );
+			memset( myargv, 0, sizeof( char * )*MAXARGVS );
+			myargv[ 0 ] = firstargv;
+
+			infile = file;
+			indexinfile = k = 0;
+			indexinfile++;  // SKIP PAST ARGV[0] (KEEP IT)
+			do
+			{
+				myargv[ indexinfile++ ] = infile + k;
+				while( k < size &&
+					( ( *( infile + k ) >= ' ' + 1 ) && ( *( infile + k ) <= 'z' ) ) )
+					k++;
+				*( infile + k ) = 0;
+				while( k < size &&
+					( ( *( infile + k ) <= ' ' ) || ( *( infile + k ) > 'z' ) ) )
+					k++;
+			} while( k < size );
+
+			for( k = 0; k < index; k++ )
+				myargv[ indexinfile++ ] = moreargs[ k ];
+			myargc = indexinfile;
+
+			// DISPLAY ARGS
+			printf( "%d command-line args:\n", myargc );
+			for( k = 1; k < myargc; k++ )
+				printf( "%s\n", myargv[ k ] );
+
+			break;
+		}
+}
+
+
 
 //
 // D_DoomMain
 //
 void D_DoomMain( void )
 {
-	//int             p;
-	//char                    file[ 256 ];
+	int             p;
+	char                    file[ 256 ];
+
+	FindResponseFile();
+
+	IdentifyVersion();
 }

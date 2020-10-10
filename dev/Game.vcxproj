@@ -89,7 +89,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,13 +144,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="doomstat.c" />
     <ClCompile Include="d_main.c" />
     <ClCompile Include="i_main.c" />
     <ClCompile Include="m_argv.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="doomdata.h" />
     <ClInclude Include="doomdef.h" />
+    <ClInclude Include="doomstat.h" />
     <ClInclude Include="doomtype.h" />
+    <ClInclude Include="dstrings.h" />
+    <ClInclude Include="d_englsh.h" />
     <ClInclude Include="d_event.h" />
     <ClInclude Include="d_main.h" />
     <ClInclude Include="m_argv.h" />

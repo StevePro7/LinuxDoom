@@ -49,3 +49,13 @@ D:\Github\id-software\DOOM\linuxdoom-1.10
 
 Entry point
 i_main.c
+
+
+FILE
+#include <stdio.h>
+
+disable 4996
+e.g. file open
+Add to preprocessor directives in project properties
+C/C++ | PreProcessor
+_CRT_SECURE_NO_WARNINGS

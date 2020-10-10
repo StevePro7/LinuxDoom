@@ -24,6 +24,9 @@
     <ClCompile Include="d_main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="doomstat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">
@@ -39,6 +42,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="doomtype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="dstrings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d_englsh.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="doomstat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="doomdata.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
