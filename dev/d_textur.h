@@ -15,53 +15,32 @@
 // for more details.
 //
 // DESCRIPTION:
-//	Refresh module, BSP traversal and handling.
-//
+//	Typedefs related to to textures etc.,
+//	 isolated here to make it easier separating modules.
+//    
 //-----------------------------------------------------------------------------
 
 
-#ifndef __R_BSP__
-#define __R_BSP__
+#ifndef __D_TEXTUR__
+#define __D_TEXTUR__
 
-#ifdef __GNUG__
-#pragma interface
-#endif
+#include "doomtype.h"
 
 
-extern seg_t*		curline;
-extern side_t*		sidedef;
-extern line_t*		linedef;
-extern sector_t*	frontsector;
-extern sector_t*	backsector;
-
-extern int		rw_x;
-extern int		rw_stopx;
-
-extern boolean		segtextured;
-
-// false if the back side is the same plane
-extern boolean		markfloor;
-extern boolean		markceiling;
-
-extern boolean		skymap;
-
-extern drawseg_t	drawsegs[ MAXDRAWSEGS ];
-extern drawseg_t*	ds_p;
-
-extern lighttable_t**	hscalelight;
-extern lighttable_t**	vscalelight;
-extern lighttable_t**	dscalelight;
 
 
-typedef void( *drawfunc_t ) ( int start, int stop );
+//
+// Flats?
+//
+// a pic is an unmasked block of pixels
+typedef struct
+{
+	byte		width;
+	byte		height;
+	byte		data;
+} pic_t;
 
 
-// BSP?
-void R_ClearClipSegs( void );
-void R_ClearDrawSegs( void );
-
-
-void R_RenderBSPNode( int bspnum );
 
 
 #endif

@@ -168,6 +168,8 @@
     <ClCompile Include="p_tick.c" />
     <ClCompile Include="p_user.c" />
     <ClCompile Include="r_data.c" />
+    <ClCompile Include="r_draw.c" />
+    <ClCompile Include="r_main.c" />
     <ClCompile Include="r_plane.c" />
     <ClCompile Include="r_segs.c" />
     <ClCompile Include="r_sky.c" />
@@ -180,6 +182,7 @@
     <ClCompile Include="z_zone.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="am_map.h" />
     <ClInclude Include="doomdata.h" />
     <ClInclude Include="doomdef.h" />
     <ClInclude Include="doomstat.h" />
@@ -192,9 +195,13 @@
     <ClInclude Include="d_main.h" />
     <ClInclude Include="d_net.h" />
     <ClInclude Include="d_player.h" />
+    <ClInclude Include="d_textur.h" />
     <ClInclude Include="d_think.h" />
     <ClInclude Include="d_ticcmd.h" />
+    <ClInclude Include="f_finale.h" />
+    <ClInclude Include="f_wipe.h" />
     <ClInclude Include="g_game.h" />
+    <ClInclude Include="hu_lib.h" />
     <ClInclude Include="hu_stuff.h" />
     <ClInclude Include="info.h" />
     <ClInclude Include="i_net.h" />

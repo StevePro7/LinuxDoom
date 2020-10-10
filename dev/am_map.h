@@ -15,53 +15,33 @@
 // for more details.
 //
 // DESCRIPTION:
-//	Refresh module, BSP traversal and handling.
+//  AutoMap module.
 //
 //-----------------------------------------------------------------------------
 
+#ifndef __AMMAP_H__
+#define __AMMAP_H__
 
-#ifndef __R_BSP__
-#define __R_BSP__
-
-#ifdef __GNUG__
-#pragma interface
-#endif
-
-
-extern seg_t*		curline;
-extern side_t*		sidedef;
-extern line_t*		linedef;
-extern sector_t*	frontsector;
-extern sector_t*	backsector;
-
-extern int		rw_x;
-extern int		rw_stopx;
-
-extern boolean		segtextured;
-
-// false if the back side is the same plane
-extern boolean		markfloor;
-extern boolean		markceiling;
-
-extern boolean		skymap;
-
-extern drawseg_t	drawsegs[ MAXDRAWSEGS ];
-extern drawseg_t*	ds_p;
-
-extern lighttable_t**	hscalelight;
-extern lighttable_t**	vscalelight;
-extern lighttable_t**	dscalelight;
+// Used by ST StatusBar stuff.
+#define AM_MSGHEADER (('a'<<24)+('m'<<16))
+#define AM_MSGENTERED (AM_MSGHEADER | ('e'<<8))
+#define AM_MSGEXITED (AM_MSGHEADER | ('x'<<8))
 
 
-typedef void( *drawfunc_t ) ( int start, int stop );
+// Called by main loop.
+boolean AM_Responder( event_t* ev );
 
+// Called by main loop.
+void AM_Ticker( void );
 
-// BSP?
-void R_ClearClipSegs( void );
-void R_ClearDrawSegs( void );
+// Called by main loop,
+// called instead of view drawer if automap active.
+void AM_Drawer( void );
 
+// Called to force the automap to quit
+// if the level is completed while it is up.
+void AM_Stop( void );
 
-void R_RenderBSPNode( int bspnum );
 
 
 #endif

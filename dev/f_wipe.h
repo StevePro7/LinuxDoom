@@ -15,54 +15,53 @@
 // for more details.
 //
 // DESCRIPTION:
-//	Refresh module, BSP traversal and handling.
-//
+//	Mission start screen wipe/melt, special effects.
+//	
 //-----------------------------------------------------------------------------
 
 
-#ifndef __R_BSP__
-#define __R_BSP__
+#ifndef __F_WIPE_H__
+#define __F_WIPE_H__
 
-#ifdef __GNUG__
-#pragma interface
-#endif
+//
+//                       SCREEN WIPE PACKAGE
+//
 
+enum
+{
+	// simple gradual pixel change for 8-bit only
+	wipe_ColorXForm,
 
-extern seg_t*		curline;
-extern side_t*		sidedef;
-extern line_t*		linedef;
-extern sector_t*	frontsector;
-extern sector_t*	backsector;
+	// weird screen melt
+	wipe_Melt,
 
-extern int		rw_x;
-extern int		rw_stopx;
+	wipe_NUMWIPES
+};
 
-extern boolean		segtextured;
-
-// false if the back side is the same plane
-extern boolean		markfloor;
-extern boolean		markceiling;
-
-extern boolean		skymap;
-
-extern drawseg_t	drawsegs[ MAXDRAWSEGS ];
-extern drawseg_t*	ds_p;
-
-extern lighttable_t**	hscalelight;
-extern lighttable_t**	vscalelight;
-extern lighttable_t**	dscalelight;
+int
+wipe_StartScreen
+( int		x,
+	int		y,
+	int		width,
+	int		height );
 
 
-typedef void( *drawfunc_t ) ( int start, int stop );
+int
+wipe_EndScreen
+( int		x,
+	int		y,
+	int		width,
+	int		height );
 
 
-// BSP?
-void R_ClearClipSegs( void );
-void R_ClearDrawSegs( void );
-
-
-void R_RenderBSPNode( int bspnum );
-
+int
+wipe_ScreenWipe
+( int		wipeno,
+	int		x,
+	int		y,
+	int		width,
+	int		height,
+	int		ticks );
 
 #endif
 //-----------------------------------------------------------------------------
