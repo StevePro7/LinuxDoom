@@ -181,10 +181,12 @@
     <ClInclude Include="d_player.h" />
     <ClInclude Include="d_think.h" />
     <ClInclude Include="d_ticcmd.h" />
+    <ClInclude Include="g_game.h" />
     <ClInclude Include="hu_stuff.h" />
     <ClInclude Include="info.h" />
     <ClInclude Include="i_sound.h" />
     <ClInclude Include="i_system.h" />
+    <ClInclude Include="i_video.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="m_argv.h" />
     <ClInclude Include="m_fixed.h" />

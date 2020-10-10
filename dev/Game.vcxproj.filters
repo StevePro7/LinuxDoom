@@ -173,5 +173,11 @@
     <ClInclude Include="hu_stuff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="i_video.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="g_game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
