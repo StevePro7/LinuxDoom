@@ -70,6 +70,9 @@
 //
 #include "g_game.h"
 #include "d_player.h"
+
+gamestate_t     wipegamestate;
+
 //
 //
 //#define SAVEGAMESIZE	0x2c000

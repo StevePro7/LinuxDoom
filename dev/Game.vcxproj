@@ -174,12 +174,14 @@
     <ClCompile Include="p_setup.c" />
     <ClCompile Include="p_tick.c" />
     <ClCompile Include="p_user.c" />
+    <ClCompile Include="r_bsp.c" />
     <ClCompile Include="r_data.c" />
     <ClCompile Include="r_draw.c" />
     <ClCompile Include="r_main.c" />
     <ClCompile Include="r_plane.c" />
     <ClCompile Include="r_segs.c" />
     <ClCompile Include="r_sky.c" />
+    <ClCompile Include="r_things.c" />
     <ClCompile Include="sounds.c" />
     <ClCompile Include="st_stuff.c" />
     <ClCompile Include="s_sound.c" />

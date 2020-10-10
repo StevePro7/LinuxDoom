@@ -147,6 +147,12 @@
     <ClCompile Include="f_finale.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="r_things.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="r_bsp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">

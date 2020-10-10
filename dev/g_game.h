@@ -71,6 +71,10 @@ boolean G_Responder( event_t*	ev );
 void G_ScreenShot( void );
 
 
+
+extern  gamestate_t     wipegamestate;
+
+
 #endif
 //-----------------------------------------------------------------------------
 //

@@ -134,7 +134,7 @@
 //int		lastpatch;
 //int		numpatches;
 //
-//int		firstspritelump;
+int		firstspritelump;
 //int		lastspritelump;
 //int		numspritelumps;
 //

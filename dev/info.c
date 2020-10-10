@@ -27,15 +27,15 @@
 //rcsid[] = "$Id: info.c,v 1.3 1997/01/26 07:45:00 b1 Exp $";
 //
 //// Data.
-//#include "sounds.h"
-//#include "m_fixed.h"
+#include "sounds.h"
+#include "m_fixed.h"
 //
 //#ifdef __GNUG__
 //#pragma implementation "info.h"
 //#endif
-//#include "info.h"
+#include "info.h"
 //
-//#include "p_mobj.h"
+#include "p_mobj.h"
 //
 //char *sprnames[ NUMSPRITES ] = {
 //	"TROO","SHTG","PUNG","PISG","PISF","SHTF","SHT2","CHGG","CHGF","MISG",
@@ -4668,3 +4668,48 @@
 //	}
 //};
 //
+
+#include <stdlib.h>
+
+
+//TODO - add all the states?
+state_t	states[ NUMSTATES ] = {
+	{ SPR_TROO,0,-1,{ NULL },S_NULL,0,0 },	// S_NULL
+};
+
+
+
+//TODO - add all the mobjinfos?
+mobjinfo_t mobjinfo[ NUMMOBJTYPES ] = {
+
+	{		// MT_PLAYER
+		-1,		// doomednum
+		S_PLAY,		// spawnstate
+	},
+
+	{		// MT_MISC86
+		81,		// doomednum
+		S_BRAINSTEM,		// spawnstate
+		1000,		// spawnhealth
+		S_NULL,		// seestate
+		sfx_None,		// seesound
+		8,		// reactiontime
+		sfx_None,		// attacksound
+		S_NULL,		// painstate
+		0,		// painchance
+		sfx_None,		// painsound
+		S_NULL,		// meleestate
+		S_NULL,		// missilestate
+		S_NULL,		// deathstate
+		S_NULL,		// xdeathstate
+		sfx_None,		// deathsound
+		0,		// speed
+		20 * FRACUNIT,		// radius
+		16 * FRACUNIT,		// height
+		100,		// mass
+		0,		// damage
+		sfx_None,		// activesound
+		MF_NOBLOCKMAP,		// flags
+		S_NULL		// raisestate
+	}
+};

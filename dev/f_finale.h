@@ -43,6 +43,7 @@ void F_Drawer( void );
 void F_StartFinale( void );
 
 
+extern	patch_t *hu_font[ HU_FONTSIZE ];
 
 
 #endif
