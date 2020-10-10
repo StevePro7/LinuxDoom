@@ -39,7 +39,7 @@
 //// Data.
 //#include "sounds.h"
 //
-//#include "p_pspr.h"
+#include "p_pspr.h"
 //
 //#define LOWERSPEED		FRACUNIT*6
 //#define RAISESPEED		FRACUNIT*6
@@ -52,7 +52,7 @@
 //#define BFGCELLS		40		
 //
 //
-//#include "d_player.h"
+#include "d_player.h"
 //
 ////
 //// P_SetPsprite
@@ -879,3 +879,10 @@
 //}
 //
 //
+
+
+
+void A_Light0( player_t *player, pspdef_t *psp )
+{
+	player->extralight = 0;
+}
