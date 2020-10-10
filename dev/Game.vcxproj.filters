@@ -123,6 +123,18 @@
     <ClCompile Include="r_main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="st_stuff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="an_map.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_setup.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="m_cheat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">

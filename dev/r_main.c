@@ -39,6 +39,8 @@
 //
 //#include "r_local.h"
 //#include "r_sky.h"
+#include "m_fixed.h"
+#include "tables.h"
 //
 //
 //
@@ -110,7 +112,7 @@
 //// fixed_t		finetangent[FINEANGLES/2];
 //
 //// fixed_t		finesine[5*FINEANGLES/4];
-//fixed_t*		finecosine = &finesine[ FINEANGLES / 4 ];
+fixed_t*		finecosine = &finesine[ FINEANGLES / 4 ];
 //
 //
 //lighttable_t*		scalelight[ LIGHTLEVELS ][ MAXLIGHTSCALE ];

@@ -144,6 +144,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="an_map.c" />
     <ClCompile Include="doomstat.c" />
     <ClCompile Include="dstrings.c" />
     <ClCompile Include="d_items.c" />
@@ -158,6 +159,7 @@
     <ClCompile Include="main.c" />
     <ClCompile Include="m_argv.c" />
     <ClCompile Include="m_bbox.c" />
+    <ClCompile Include="m_cheat.c" />
     <ClCompile Include="m_fixed.c" />
     <ClCompile Include="m_misc.c" />
     <ClCompile Include="m_random.c" />
@@ -165,6 +167,7 @@
     <ClCompile Include="p_map.c" />
     <ClCompile Include="p_mobj.c" />
     <ClCompile Include="p_pspr.c" />
+    <ClCompile Include="p_setup.c" />
     <ClCompile Include="p_tick.c" />
     <ClCompile Include="p_user.c" />
     <ClCompile Include="r_data.c" />
@@ -174,6 +177,7 @@
     <ClCompile Include="r_segs.c" />
     <ClCompile Include="r_sky.c" />
     <ClCompile Include="sounds.c" />
+    <ClCompile Include="st_stuff.c" />
     <ClCompile Include="s_sound.c" />
     <ClCompile Include="tables.c" />
     <ClCompile Include="v_video.c" />
