@@ -4679,7 +4679,6 @@ state_t	states[ NUMSTATES ] = {
 
 
 
-//TODO - add all the mobjinfos?
 mobjinfo_t mobjinfo[ NUMMOBJTYPES ] = {
 
 	{		// MT_PLAYER
