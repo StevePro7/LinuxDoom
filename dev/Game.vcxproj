@@ -150,6 +150,7 @@
     <ClCompile Include="d_main.c" />
     <ClCompile Include="info.c" />
     <ClCompile Include="i_main.c" />
+    <ClCompile Include="i_sound.c" />
     <ClCompile Include="i_system.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="m_argv.c" />
@@ -180,6 +181,7 @@
     <ClInclude Include="d_think.h" />
     <ClInclude Include="d_ticcmd.h" />
     <ClInclude Include="info.h" />
+    <ClInclude Include="i_sound.h" />
     <ClInclude Include="i_system.h" />
     <ClInclude Include="main.h" />
     <ClInclude Include="m_argv.h" />

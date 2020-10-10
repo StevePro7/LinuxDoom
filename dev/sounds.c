@@ -14,284 +14,215 @@
 // FITNESS FOR A PARTICULAR PURPOSE. See the DOOM Source Code License
 // for more details.
 //
+// $Log:$
+//
 // DESCRIPTION:
-//	Created by the sound utility written by Dave Taylor.
-//	Kept as a sample, DOOM2  sounds. Frozen.
+//	Created by a sound utility.
+//	Kept as a sample, DOOM2 sounds.
 //
 //-----------------------------------------------------------------------------
 
-#ifndef __SOUNDS__
-#define __SOUNDS__
 
+static const char
+rcsid[] = "$Id: sounds.c,v 1.3 1997/01/29 22:40:44 b1 Exp $";
+
+
+#include "doomtype.h"
+#include "sounds.h"
 
 //
-// SoundFX struct.
+// Information about all the music
 //
-typedef struct sfxinfo_struct	sfxinfo_t;
 
-struct sfxinfo_struct
+musicinfo_t S_music[] =
 {
-	// up to 6-character name
-	char*	name;
-
-	// Sfx singularity (only one at a time)
-	int		singularity;
-
-	// Sfx priority
-	int		priority;
-
-	// referenced sound if a link
-	sfxinfo_t*	link;
-
-	// pitch if a link
-	int		pitch;
-
-	// volume if a link
-	int		volume;
-
-	// sound data
-	void*	data;
-
-	// this is checked every second to see if sound
-	// can be thrown out (if 0, then decrement, if -1,
-	// then throw out, if > 0, then it is in use)
-	int		usefulness;
-
-	// lump number of sfx
-	int		lumpnum;
+	{ 0 },
+	{ "e1m1", 0 },
+	{ "e1m2", 0 },
+	{ "e1m3", 0 },
+	{ "e1m4", 0 },
+	{ "e1m5", 0 },
+	{ "e1m6", 0 },
+	{ "e1m7", 0 },
+	{ "e1m8", 0 },
+	{ "e1m9", 0 },
+	{ "e2m1", 0 },
+	{ "e2m2", 0 },
+	{ "e2m3", 0 },
+	{ "e2m4", 0 },
+	{ "e2m5", 0 },
+	{ "e2m6", 0 },
+	{ "e2m7", 0 },
+	{ "e2m8", 0 },
+	{ "e2m9", 0 },
+	{ "e3m1", 0 },
+	{ "e3m2", 0 },
+	{ "e3m3", 0 },
+	{ "e3m4", 0 },
+	{ "e3m5", 0 },
+	{ "e3m6", 0 },
+	{ "e3m7", 0 },
+	{ "e3m8", 0 },
+	{ "e3m9", 0 },
+	{ "inter", 0 },
+	{ "intro", 0 },
+	{ "bunny", 0 },
+	{ "victor", 0 },
+	{ "introa", 0 },
+	{ "runnin", 0 },
+	{ "stalks", 0 },
+	{ "countd", 0 },
+	{ "betwee", 0 },
+	{ "doom", 0 },
+	{ "the_da", 0 },
+	{ "shawn", 0 },
+	{ "ddtblu", 0 },
+	{ "in_cit", 0 },
+	{ "dead", 0 },
+	{ "stlks2", 0 },
+	{ "theda2", 0 },
+	{ "doom2", 0 },
+	{ "ddtbl2", 0 },
+	{ "runni2", 0 },
+	{ "dead2", 0 },
+	{ "stlks3", 0 },
+	{ "romero", 0 },
+	{ "shawn2", 0 },
+	{ "messag", 0 },
+	{ "count2", 0 },
+	{ "ddtbl3", 0 },
+	{ "ampie", 0 },
+	{ "theda3", 0 },
+	{ "adrian", 0 },
+	{ "messg2", 0 },
+	{ "romer2", 0 },
+	{ "tense", 0 },
+	{ "shawn3", 0 },
+	{ "openin", 0 },
+	{ "evil", 0 },
+	{ "ultima", 0 },
+	{ "read_m", 0 },
+	{ "dm2ttl", 0 },
+	{ "dm2int", 0 }
 };
 
 
-
-
 //
-// MusicInfo struct.
+// Information about all the sfx
 //
-typedef struct
+
+sfxinfo_t S_sfx[] =
 {
-	// up to 6-character name
-	char*	name;
+	// S_sfx[0] needs to be a dummy for odd reasons.
+	{ "none", false,  0, 0, -1, -1, 0 },
 
-	// lump number of music
-	int		lumpnum;
-
-	// music data
-	void*	data;
-
-	// music handle once registered
-	int handle;
-
-} musicinfo_t;
-
-
-
-
-// the complete set of sound effects
-extern sfxinfo_t	S_sfx[];
-
-// the complete set of music
-extern musicinfo_t	S_music[];
-
-//
-// Identifiers for all music in game.
-//
-
-typedef enum
-{
-	mus_None,
-	mus_e1m1,
-	mus_e1m2,
-	mus_e1m3,
-	mus_e1m4,
-	mus_e1m5,
-	mus_e1m6,
-	mus_e1m7,
-	mus_e1m8,
-	mus_e1m9,
-	mus_e2m1,
-	mus_e2m2,
-	mus_e2m3,
-	mus_e2m4,
-	mus_e2m5,
-	mus_e2m6,
-	mus_e2m7,
-	mus_e2m8,
-	mus_e2m9,
-	mus_e3m1,
-	mus_e3m2,
-	mus_e3m3,
-	mus_e3m4,
-	mus_e3m5,
-	mus_e3m6,
-	mus_e3m7,
-	mus_e3m8,
-	mus_e3m9,
-	mus_inter,
-	mus_intro,
-	mus_bunny,
-	mus_victor,
-	mus_introa,
-	mus_runnin,
-	mus_stalks,
-	mus_countd,
-	mus_betwee,
-	mus_doom,
-	mus_the_da,
-	mus_shawn,
-	mus_ddtblu,
-	mus_in_cit,
-	mus_dead,
-	mus_stlks2,
-	mus_theda2,
-	mus_doom2,
-	mus_ddtbl2,
-	mus_runni2,
-	mus_dead2,
-	mus_stlks3,
-	mus_romero,
-	mus_shawn2,
-	mus_messag,
-	mus_count2,
-	mus_ddtbl3,
-	mus_ampie,
-	mus_theda3,
-	mus_adrian,
-	mus_messg2,
-	mus_romer2,
-	mus_tense,
-	mus_shawn3,
-	mus_openin,
-	mus_evil,
-	mus_ultima,
-	mus_read_m,
-	mus_dm2ttl,
-	mus_dm2int,
-	NUMMUSIC
-} musicenum_t;
-
-
-//
-// Identifiers for all sfx in game.
-//
-
-typedef enum
-{
-	sfx_None,
-	sfx_pistol,
-	sfx_shotgn,
-	sfx_sgcock,
-	sfx_dshtgn,
-	sfx_dbopn,
-	sfx_dbcls,
-	sfx_dbload,
-	sfx_plasma,
-	sfx_bfg,
-	sfx_sawup,
-	sfx_sawidl,
-	sfx_sawful,
-	sfx_sawhit,
-	sfx_rlaunc,
-	sfx_rxplod,
-	sfx_firsht,
-	sfx_firxpl,
-	sfx_pstart,
-	sfx_pstop,
-	sfx_doropn,
-	sfx_dorcls,
-	sfx_stnmov,
-	sfx_swtchn,
-	sfx_swtchx,
-	sfx_plpain,
-	sfx_dmpain,
-	sfx_popain,
-	sfx_vipain,
-	sfx_mnpain,
-	sfx_pepain,
-	sfx_slop,
-	sfx_itemup,
-	sfx_wpnup,
-	sfx_oof,
-	sfx_telept,
-	sfx_posit1,
-	sfx_posit2,
-	sfx_posit3,
-	sfx_bgsit1,
-	sfx_bgsit2,
-	sfx_sgtsit,
-	sfx_cacsit,
-	sfx_brssit,
-	sfx_cybsit,
-	sfx_spisit,
-	sfx_bspsit,
-	sfx_kntsit,
-	sfx_vilsit,
-	sfx_mansit,
-	sfx_pesit,
-	sfx_sklatk,
-	sfx_sgtatk,
-	sfx_skepch,
-	sfx_vilatk,
-	sfx_claw,
-	sfx_skeswg,
-	sfx_pldeth,
-	sfx_pdiehi,
-	sfx_podth1,
-	sfx_podth2,
-	sfx_podth3,
-	sfx_bgdth1,
-	sfx_bgdth2,
-	sfx_sgtdth,
-	sfx_cacdth,
-	sfx_skldth,
-	sfx_brsdth,
-	sfx_cybdth,
-	sfx_spidth,
-	sfx_bspdth,
-	sfx_vildth,
-	sfx_kntdth,
-	sfx_pedth,
-	sfx_skedth,
-	sfx_posact,
-	sfx_bgact,
-	sfx_dmact,
-	sfx_bspact,
-	sfx_bspwlk,
-	sfx_vilact,
-	sfx_noway,
-	sfx_barexp,
-	sfx_punch,
-	sfx_hoof,
-	sfx_metal,
-	sfx_chgun,
-	sfx_tink,
-	sfx_bdopn,
-	sfx_bdcls,
-	sfx_itmbk,
-	sfx_flame,
-	sfx_flamst,
-	sfx_getpow,
-	sfx_bospit,
-	sfx_boscub,
-	sfx_bossit,
-	sfx_bospn,
-	sfx_bosdth,
-	sfx_manatk,
-	sfx_mandth,
-	sfx_sssit,
-	sfx_ssdth,
-	sfx_keenpn,
-	sfx_keendt,
-	sfx_skeact,
-	sfx_skesit,
-	sfx_skeatk,
-	sfx_radio,
-	NUMSFX
-} sfxenum_t;
-
-#endif
-//-----------------------------------------------------------------------------
-//
-// $Log:$
-//
-//-----------------------------------------------------------------------------
+	{ "pistol", false, 64, 0, -1, -1, 0 },
+	{ "shotgn", false, 64, 0, -1, -1, 0 },
+	{ "sgcock", false, 64, 0, -1, -1, 0 },
+	{ "dshtgn", false, 64, 0, -1, -1, 0 },
+	{ "dbopn", false, 64, 0, -1, -1, 0 },
+	{ "dbcls", false, 64, 0, -1, -1, 0 },
+	{ "dbload", false, 64, 0, -1, -1, 0 },
+	{ "plasma", false, 64, 0, -1, -1, 0 },
+	{ "bfg", false, 64, 0, -1, -1, 0 },
+	{ "sawup", false, 64, 0, -1, -1, 0 },
+	{ "sawidl", false, 118, 0, -1, -1, 0 },
+	{ "sawful", false, 64, 0, -1, -1, 0 },
+	{ "sawhit", false, 64, 0, -1, -1, 0 },
+	{ "rlaunc", false, 64, 0, -1, -1, 0 },
+	{ "rxplod", false, 70, 0, -1, -1, 0 },
+	{ "firsht", false, 70, 0, -1, -1, 0 },
+	{ "firxpl", false, 70, 0, -1, -1, 0 },
+	{ "pstart", false, 100, 0, -1, -1, 0 },
+	{ "pstop", false, 100, 0, -1, -1, 0 },
+	{ "doropn", false, 100, 0, -1, -1, 0 },
+	{ "dorcls", false, 100, 0, -1, -1, 0 },
+	{ "stnmov", false, 119, 0, -1, -1, 0 },
+	{ "swtchn", false, 78, 0, -1, -1, 0 },
+	{ "swtchx", false, 78, 0, -1, -1, 0 },
+	{ "plpain", false, 96, 0, -1, -1, 0 },
+	{ "dmpain", false, 96, 0, -1, -1, 0 },
+	{ "popain", false, 96, 0, -1, -1, 0 },
+	{ "vipain", false, 96, 0, -1, -1, 0 },
+	{ "mnpain", false, 96, 0, -1, -1, 0 },
+	{ "pepain", false, 96, 0, -1, -1, 0 },
+	{ "slop", false, 78, 0, -1, -1, 0 },
+	{ "itemup", true, 78, 0, -1, -1, 0 },
+	{ "wpnup", true, 78, 0, -1, -1, 0 },
+	{ "oof", false, 96, 0, -1, -1, 0 },
+	{ "telept", false, 32, 0, -1, -1, 0 },
+	{ "posit1", true, 98, 0, -1, -1, 0 },
+	{ "posit2", true, 98, 0, -1, -1, 0 },
+	{ "posit3", true, 98, 0, -1, -1, 0 },
+	{ "bgsit1", true, 98, 0, -1, -1, 0 },
+	{ "bgsit2", true, 98, 0, -1, -1, 0 },
+	{ "sgtsit", true, 98, 0, -1, -1, 0 },
+	{ "cacsit", true, 98, 0, -1, -1, 0 },
+	{ "brssit", true, 94, 0, -1, -1, 0 },
+	{ "cybsit", true, 92, 0, -1, -1, 0 },
+	{ "spisit", true, 90, 0, -1, -1, 0 },
+	{ "bspsit", true, 90, 0, -1, -1, 0 },
+	{ "kntsit", true, 90, 0, -1, -1, 0 },
+	{ "vilsit", true, 90, 0, -1, -1, 0 },
+	{ "mansit", true, 90, 0, -1, -1, 0 },
+	{ "pesit", true, 90, 0, -1, -1, 0 },
+	{ "sklatk", false, 70, 0, -1, -1, 0 },
+	{ "sgtatk", false, 70, 0, -1, -1, 0 },
+	{ "skepch", false, 70, 0, -1, -1, 0 },
+	{ "vilatk", false, 70, 0, -1, -1, 0 },
+	{ "claw", false, 70, 0, -1, -1, 0 },
+	{ "skeswg", false, 70, 0, -1, -1, 0 },
+	{ "pldeth", false, 32, 0, -1, -1, 0 },
+	{ "pdiehi", false, 32, 0, -1, -1, 0 },
+	{ "podth1", false, 70, 0, -1, -1, 0 },
+	{ "podth2", false, 70, 0, -1, -1, 0 },
+	{ "podth3", false, 70, 0, -1, -1, 0 },
+	{ "bgdth1", false, 70, 0, -1, -1, 0 },
+	{ "bgdth2", false, 70, 0, -1, -1, 0 },
+	{ "sgtdth", false, 70, 0, -1, -1, 0 },
+	{ "cacdth", false, 70, 0, -1, -1, 0 },
+	{ "skldth", false, 70, 0, -1, -1, 0 },
+	{ "brsdth", false, 32, 0, -1, -1, 0 },
+	{ "cybdth", false, 32, 0, -1, -1, 0 },
+	{ "spidth", false, 32, 0, -1, -1, 0 },
+	{ "bspdth", false, 32, 0, -1, -1, 0 },
+	{ "vildth", false, 32, 0, -1, -1, 0 },
+	{ "kntdth", false, 32, 0, -1, -1, 0 },
+	{ "pedth", false, 32, 0, -1, -1, 0 },
+	{ "skedth", false, 32, 0, -1, -1, 0 },
+	{ "posact", true, 120, 0, -1, -1, 0 },
+	{ "bgact", true, 120, 0, -1, -1, 0 },
+	{ "dmact", true, 120, 0, -1, -1, 0 },
+	{ "bspact", true, 100, 0, -1, -1, 0 },
+	{ "bspwlk", true, 100, 0, -1, -1, 0 },
+	{ "vilact", true, 100, 0, -1, -1, 0 },
+	{ "noway", false, 78, 0, -1, -1, 0 },
+	{ "barexp", false, 60, 0, -1, -1, 0 },
+	{ "punch", false, 64, 0, -1, -1, 0 },
+	{ "hoof", false, 70, 0, -1, -1, 0 },
+	{ "metal", false, 70, 0, -1, -1, 0 },
+	{ "chgun", false, 64, &S_sfx[ sfx_pistol ], 150, 0, 0 },
+	{ "tink", false, 60, 0, -1, -1, 0 },
+	{ "bdopn", false, 100, 0, -1, -1, 0 },
+	{ "bdcls", false, 100, 0, -1, -1, 0 },
+	{ "itmbk", false, 100, 0, -1, -1, 0 },
+	{ "flame", false, 32, 0, -1, -1, 0 },
+	{ "flamst", false, 32, 0, -1, -1, 0 },
+	{ "getpow", false, 60, 0, -1, -1, 0 },
+	{ "bospit", false, 70, 0, -1, -1, 0 },
+	{ "boscub", false, 70, 0, -1, -1, 0 },
+	{ "bossit", false, 70, 0, -1, -1, 0 },
+	{ "bospn", false, 70, 0, -1, -1, 0 },
+	{ "bosdth", false, 70, 0, -1, -1, 0 },
+	{ "manatk", false, 70, 0, -1, -1, 0 },
+	{ "mandth", false, 70, 0, -1, -1, 0 },
+	{ "sssit", false, 70, 0, -1, -1, 0 },
+	{ "ssdth", false, 70, 0, -1, -1, 0 },
+	{ "keenpn", false, 70, 0, -1, -1, 0 },
+	{ "keendt", false, 70, 0, -1, -1, 0 },
+	{ "skeact", false, 70, 0, -1, -1, 0 },
+	{ "skesit", false, 70, 0, -1, -1, 0 },
+	{ "skeatk", false, 70, 0, -1, -1, 0 },
+	{ "radio", false, 60, 0, -1, -1, 0 }
+};
 
