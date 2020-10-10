@@ -66,6 +66,9 @@
     <ClCompile Include="w_wad.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="tables.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">
@@ -147,6 +150,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="w_wad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tables.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
