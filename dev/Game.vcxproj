@@ -158,6 +158,7 @@
     <ClCompile Include="m_random.c" />
     <ClCompile Include="m_swap.c" />
     <ClCompile Include="p_tick.c" />
+    <ClCompile Include="sounds.c" />
     <ClCompile Include="tables.c" />
     <ClCompile Include="wi_stuff.c" />
     <ClCompile Include="w_wad.c" />
@@ -188,6 +189,7 @@
     <ClInclude Include="m_swap.h" />
     <ClInclude Include="p_inter.h" />
     <ClInclude Include="p_tick.h" />
+    <ClInclude Include="sounds.h" />
     <ClInclude Include="tables.h" />
     <ClInclude Include="wi_stuff.h" />
     <ClInclude Include="w_wad.h" />
