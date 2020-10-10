@@ -153,6 +153,9 @@
     <ClCompile Include="r_bsp.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="f_wipe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">
