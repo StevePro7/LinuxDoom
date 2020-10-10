@@ -145,6 +145,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="doomstat.c" />
+    <ClCompile Include="dstrings.c" />
     <ClCompile Include="d_items.c" />
     <ClCompile Include="d_main.c" />
     <ClCompile Include="info.c" />
@@ -152,6 +153,9 @@
     <ClCompile Include="i_system.c" />
     <ClCompile Include="m_argv.c" />
     <ClCompile Include="m_fixed.c" />
+    <ClCompile Include="m_misc.c" />
+    <ClCompile Include="m_random.c" />
+    <ClCompile Include="z_zone.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdata.h" />
@@ -161,6 +165,7 @@
     <ClInclude Include="dstrings.h" />
     <ClInclude Include="d_englsh.h" />
     <ClInclude Include="d_event.h" />
+    <ClInclude Include="d_french.h" />
     <ClInclude Include="d_items.h" />
     <ClInclude Include="d_main.h" />
     <ClInclude Include="d_net.h" />
@@ -171,6 +176,9 @@
     <ClInclude Include="i_system.h" />
     <ClInclude Include="m_argv.h" />
     <ClInclude Include="m_fixed.h" />
+    <ClInclude Include="m_misc.h" />
+    <ClInclude Include="m_random.h" />
+    <ClInclude Include="z_zone.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

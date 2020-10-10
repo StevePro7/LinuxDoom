@@ -39,6 +39,18 @@
     <ClCompile Include="i_system.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="m_random.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="m_misc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="z_zone.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="dstrings.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">
@@ -90,6 +102,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="i_system.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="m_random.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="m_misc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="z_zone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d_french.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

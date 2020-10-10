@@ -5,10 +5,14 @@
 #include "i_system.h"
 
 #include <stdio.h>
+#include <stdlib.h>
+
 //
 // I_Error
 //
 extern boolean demorecording;
+
+int	mb_used = 6;
 
 void I_Error( char *error, ... )
 {
@@ -31,4 +35,12 @@ void I_Error( char *error, ... )
 	//I_ShutdownGraphics();
 
 	//exit( -1 );
+}
+
+
+
+byte* I_ZoneBase( int*	size )
+{
+	*size = mb_used * 1024 * 1024;
+	return ( byte * ) malloc( *size );
 }

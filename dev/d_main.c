@@ -409,4 +409,10 @@ void D_DoomMain( void )
 
 	setbuf( stdout, NULL );
 	modifiedgame = false;
+
+	nomonsters = M_CheckParm( "-nomonsters" );
+	respawnparm = M_CheckParm( "-respawn" );
+	fastparm = M_CheckParm( "-fast" );
+	devparm = M_CheckParm( "-devparm" );
+	
 }
