@@ -93,6 +93,21 @@
     <ClCompile Include="r_data.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="s_sound.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_mobj.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="g_game.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="v_video.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="m_bbox.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">
@@ -222,6 +237,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="r_state.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="st_stuff.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="s_sound.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="v_video.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="m_bbox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

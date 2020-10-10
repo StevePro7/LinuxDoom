@@ -44,3 +44,10 @@ byte* I_ZoneBase( int*	size )
 	*size = mb_used * 1024 * 1024;
 	return ( byte * ) malloc( *size );
 }
+
+
+// TODO
+byte* I_AllocLow( int length )
+{
+	return NULL;
+}
