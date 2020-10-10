@@ -406,4 +406,7 @@ void D_DoomMain( void )
 	FindResponseFile();
 
 	IdentifyVersion();
+
+	setbuf( stdout, NULL );
+	modifiedgame = false;
 }

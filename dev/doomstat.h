@@ -16,7 +16,21 @@
 
 
 
+// ------------------------
+// Command line parameters.
+//
+extern  boolean	nomonsters;	// checkparm of -nomonsters
+extern  boolean	respawnparm;	// checkparm of -respawn
+extern  boolean	fastparm;	// checkparm of -fast
+
+extern  boolean	devparm;	// DEBUG: launched with -devparm
+
+
+
 extern GameMode_t	gamemode;
+
+// Set if homebrew PWAD stuff has been added.
+extern  boolean	modifiedgame;
 
 
 // -------------------------------------------
