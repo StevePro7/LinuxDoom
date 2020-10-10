@@ -56,5 +56,11 @@
     <ClInclude Include="doomdata.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="d_net.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="d_ticcmd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

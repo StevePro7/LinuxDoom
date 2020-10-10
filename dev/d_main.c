@@ -4,6 +4,8 @@ static const char rcsid[] = "$Id: d_main.c,v 1.8 1997/02/03 22:45:09 b1 Exp $";
 #define	FGCOLOR		8
 
 
+#define R_OK		1
+
 
 #ifdef NORMALUNIX
 #include <stdio.h>
@@ -150,6 +152,11 @@ void D_AddFile( char *file )
 }
 
 
+unsigned char access( char* ptr, unsigned char test )
+{
+	return 1;
+}
+
 //
 // IdentifyVersion
 // Checks availability of IWAD files by name,
@@ -158,14 +165,14 @@ void D_AddFile( char *file )
 //
 void IdentifyVersion( void )
 {
-	char*	doom1wad;
-	char*	doomwad;
-	char*	doomuwad;
-	char*	doom2wad;
+	char*	doom1wad = NULL;
+	char*	doomwad = NULL;
+	char*	doomuwad = NULL;
+	char*	doom2wad = NULL;
 
-	char*	doom2fwad;
-	char*	plutoniawad;
-	char*	tntwad;
+	char*	doom2fwad = NULL;
+	char*	plutoniawad = NULL;
+	char*	tntwad = NULL;
 
 #ifdef NORMALUNIX
 	char *home;
@@ -250,61 +257,63 @@ void IdentifyVersion( void )
 		return;
 	}
 
-	//if( !access( doom2fwad, R_OK ) )
-	//{
-	//	gamemode = commercial;
-	//	// C'est ridicule!
-	//	// Let's handle languages in config files, okay?
-	//	language = french;
-	//	printf( "French version\n" );
-	//	D_AddFile( doom2fwad );
-	//	return;
-	//}
+	if( !access( doom2fwad, R_OK ) )
+	{
+		gamemode = commercial;
+		// C'est ridicule!
+		// Let's handle languages in config files, okay?
+		language = french;
+		printf( "French version\n" );
+		D_AddFile( doom2fwad );
+		return;
+	}
 
-	//if( !access( doom2wad, R_OK ) )
-	//{
-	//	gamemode = commercial;
-	//	D_AddFile( doom2wad );
-	//	return;
-	//}
+	if( !access( doom2wad, R_OK ) )
+	{
+		gamemode = commercial;
+		D_AddFile( doom2wad );
+		return;
+	}
 
-	//if( !access( plutoniawad, R_OK ) )
-	//{
-	//	gamemode = commercial;
-	//	D_AddFile( plutoniawad );
-	//	return;
-	//}
+	if( !access( plutoniawad, R_OK ) )
+	{
+		gamemode = commercial;
+		D_AddFile( plutoniawad );
+		return;
+	}
 
-	//if( !access( tntwad, R_OK ) )
-	//{
-	//	gamemode = commercial;
-	//	D_AddFile( tntwad );
-	//	return;
-	//}
+	if( !access( tntwad, R_OK ) )
+	{
+		gamemode = commercial;
+		D_AddFile( tntwad );
+		return;
+	}
 
-	//if( !access( doomuwad, R_OK ) )
-	//{
-	//	gamemode = retail;
-	//	D_AddFile( doomuwad );
-	//	return;
-	//}
+	if( !access( doomuwad, R_OK ) )
+	{
+		gamemode = retail;
+		D_AddFile( doomuwad );
+		return;
+	}
 
-	//if( !access( doomwad, R_OK ) )
-	//{
-	//	gamemode = registered;
-	//	D_AddFile( doomwad );
-	//	return;
-	//}
+	if( !access( doomwad, R_OK ) )
+	{
+		gamemode = registered;
+		D_AddFile( doomwad );
+		return;
+	}
 
-	//if( !access( doom1wad, R_OK ) )
-	//{
-	//	gamemode = shareware;
-	//	D_AddFile( doom1wad );
-	//	return;
-	//}
+	if( !access( doom1wad, R_OK ) )
+	{
+		gamemode = shareware;
+		D_AddFile( doom1wad );
+		return;
+	}
 
+	// stevepro
 	//printf( "Game mode indeterminate.\n" );
 	//gamemode = indetermined;
+	gamemode = shareware;
 
 	// We don't abort. Let's see what the PWAD contains.
 	//exit(1);
@@ -391,8 +400,8 @@ void FindResponseFile( void )
 //
 void D_DoomMain( void )
 {
-	int             p;
-	char                    file[ 256 ];
+//	int             p;
+//	char                    file[ 256 ];
 
 	FindResponseFile();
 
