@@ -26,6 +26,10 @@
 
 #include "doomtype.h"
 #include "d_event.h"
+
+#include "hu_stuff.h"
+#include "r_defs.h"
+
 //
 // FINALE
 //
