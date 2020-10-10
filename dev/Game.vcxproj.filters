@@ -116,5 +116,8 @@
     <ClInclude Include="d_french.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="p_inter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -178,6 +178,7 @@
     <ClInclude Include="m_fixed.h" />
     <ClInclude Include="m_misc.h" />
     <ClInclude Include="m_random.h" />
+    <ClInclude Include="p_inter.h" />
     <ClInclude Include="z_zone.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
