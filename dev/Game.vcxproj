@@ -150,6 +150,7 @@
     <ClCompile Include="d_main.c" />
     <ClCompile Include="info.c" />
     <ClCompile Include="i_main.c" />
+    <ClCompile Include="i_net.c" />
     <ClCompile Include="i_sound.c" />
     <ClCompile Include="i_system.c" />
     <ClCompile Include="i_video.c" />
@@ -184,6 +185,7 @@
     <ClInclude Include="g_game.h" />
     <ClInclude Include="hu_stuff.h" />
     <ClInclude Include="info.h" />
+    <ClInclude Include="i_net.h" />
     <ClInclude Include="i_sound.h" />
     <ClInclude Include="i_system.h" />
     <ClInclude Include="i_video.h" />

@@ -78,6 +78,9 @@
     <ClCompile Include="i_video.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="i_net.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">
@@ -177,6 +180,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="g_game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="i_net.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
