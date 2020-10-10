@@ -21,6 +21,7 @@
 //
 //-----------------------------------------------------------------------------
 
+#pragma warning(disable : 4018)
 
 static const char
 rcsid[] = "$Id: f_finale.c,v 1.5 1997/02/03 21:26:34 b1 Exp $";
@@ -42,8 +43,6 @@ rcsid[] = "$Id: f_finale.c,v 1.5 1997/02/03 21:26:34 b1 Exp $";
 #include "doomstat.h"
 #include "r_state.h"
 
-
-#include "info.h"
 
 // ?
 //#include "doomstat.h"
