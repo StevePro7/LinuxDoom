@@ -149,6 +149,7 @@
     <ClCompile Include="dstrings.c" />
     <ClCompile Include="d_items.c" />
     <ClCompile Include="d_main.c" />
+    <ClCompile Include="d_net.c" />
     <ClCompile Include="g_game.c" />
     <ClCompile Include="info.c" />
     <ClCompile Include="i_main.c" />
@@ -161,6 +162,7 @@
     <ClCompile Include="m_bbox.c" />
     <ClCompile Include="m_cheat.c" />
     <ClCompile Include="m_fixed.c" />
+    <ClCompile Include="m_menu.c" />
     <ClCompile Include="m_misc.c" />
     <ClCompile Include="m_random.c" />
     <ClCompile Include="m_swap.c" />

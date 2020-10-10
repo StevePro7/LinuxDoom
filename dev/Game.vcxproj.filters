@@ -135,6 +135,12 @@
     <ClCompile Include="m_cheat.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="d_net.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="m_menu.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">

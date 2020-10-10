@@ -394,6 +394,29 @@ void FindResponseFile( void )
 }
 
 
+//
+// D_ProcessEvents
+// Send all the events of the given timestamp down the responder chain
+//
+void D_ProcessEvents( void )
+{
+	// TODO
+	//event_t*	ev;
+
+	//// IF STORE DEMO, DO NOT ACCEPT INPUT
+	//if( ( gamemode == commercial )
+	//	&& ( W_CheckNumForName( "map01" ) < 0 ) )
+	//	return;
+
+	//for( ; eventtail != eventhead; eventtail = ( ++eventtail )&( MAXEVENTS - 1 ) )
+	//{
+	//	ev = &events[ eventtail ];
+	//	if( M_Responder( ev ) )
+	//		continue;               // menu ate the event
+	//	G_Responder( ev );
+	//}
+}
+
 
 //
 // D_DoomMain

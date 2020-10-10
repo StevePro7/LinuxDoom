@@ -1689,3 +1689,481 @@ boolean         singledemo;            	// quit after playing a demo from cmdlin
 //
 //
 //
+
+
+
+boolean G_CheckDemoStatus( void )
+{
+	// TODO
+	//int             endtime;
+
+	//if( timingdemo )
+	//{
+	//	endtime = I_GetTime();
+	//	I_Error( "timed %i gametics in %i realtics", gametic
+	//		, endtime - starttime );
+	//}
+
+	//if( demoplayback )
+	//{
+	//	if( singledemo )
+	//		I_Quit();
+
+	//	Z_ChangeTag( demobuffer, PU_CACHE );
+	//	demoplayback = false;
+	//	netdemo = false;
+	//	netgame = false;
+	//	deathmatch = false;
+	//	playeringame[ 1 ] = playeringame[ 2 ] = playeringame[ 3 ] = 0;
+	//	respawnparm = false;
+	//	fastparm = false;
+	//	nomonsters = false;
+	//	consoleplayer = 0;
+	//	D_AdvanceDemo();
+	//	return true;
+	//}
+
+	//if( demorecording )
+	//{
+	//	*demo_p++ = DEMOMARKER;
+	//	M_WriteFile( demoname, demobuffer, demo_p - demobuffer );
+	//	Z_Free( demobuffer );
+	//	demorecording = false;
+	//	I_Error( "Demo %s recorded", demoname );
+	//}
+
+	return false;
+}
+
+
+
+//
+// G_Ticker
+// Make ticcmd_ts for the players.
+//
+void G_Ticker( void )
+{
+	// TODO
+	//int		i;
+	//int		buf;
+	//ticcmd_t*	cmd;
+
+	//// do player reborns if needed
+	//for( i = 0; i < MAXPLAYERS; i++ )
+	//	if( playeringame[ i ] && players[ i ].playerstate == PST_REBORN )
+	//		G_DoReborn( i );
+
+	//// do things to change the game state
+	//while( gameaction != ga_nothing )
+	//{
+	//	switch( gameaction )
+	//	{
+	//	case ga_loadlevel:
+	//		G_DoLoadLevel();
+	//		break;
+	//	case ga_newgame:
+	//		G_DoNewGame();
+	//		break;
+	//	case ga_loadgame:
+	//		G_DoLoadGame();
+	//		break;
+	//	case ga_savegame:
+	//		G_DoSaveGame();
+	//		break;
+	//	case ga_playdemo:
+	//		G_DoPlayDemo();
+	//		break;
+	//	case ga_completed:
+	//		G_DoCompleted();
+	//		break;
+	//	case ga_victory:
+	//		F_StartFinale();
+	//		break;
+	//	case ga_worlddone:
+	//		G_DoWorldDone();
+	//		break;
+	//	case ga_screenshot:
+	//		M_ScreenShot();
+	//		gameaction = ga_nothing;
+	//		break;
+	//	case ga_nothing:
+	//		break;
+	//	}
+	//}
+
+	//// get commands, check consistancy,
+	//// and build new consistancy check
+	//buf = ( gametic / ticdup ) % BACKUPTICS;
+
+	//for( i = 0; i < MAXPLAYERS; i++ )
+	//{
+	//	if( playeringame[ i ] )
+	//	{
+	//		cmd = &players[ i ].cmd;
+
+	//		memcpy( cmd, &netcmds[ i ][ buf ], sizeof( ticcmd_t ) );
+
+	//		if( demoplayback )
+	//			G_ReadDemoTiccmd( cmd );
+	//		if( demorecording )
+	//			G_WriteDemoTiccmd( cmd );
+
+	//		// check for turbo cheats
+	//		if( cmd->forwardmove > TURBOTHRESHOLD
+	//			&& !( gametic & 31 ) && ( ( gametic >> 5 ) & 3 ) == i )
+	//		{
+	//			static char turbomessage[ 80 ];
+	//			extern char *player_names[ 4 ];
+	//			sprintf( turbomessage, "%s is turbo!", player_names[ i ] );
+	//			players[ consoleplayer ].message = turbomessage;
+	//		}
+
+	//		if( netgame && !netdemo && !( gametic%ticdup ) )
+	//		{
+	//			if( gametic > BACKUPTICS
+	//				&& consistancy[ i ][ buf ] != cmd->consistancy )
+	//			{
+	//				I_Error( "consistency failure (%i should be %i)",
+	//					cmd->consistancy, consistancy[ i ][ buf ] );
+	//			}
+	//			if( players[ i ].mo )
+	//				consistancy[ i ][ buf ] = players[ i ].mo->x;
+	//			else
+	//				consistancy[ i ][ buf ] = rndindex;
+	//		}
+	//	}
+	//}
+
+	//// check for special buttons
+	//for( i = 0; i < MAXPLAYERS; i++ )
+	//{
+	//	if( playeringame[ i ] )
+	//	{
+	//		if( players[ i ].cmd.buttons & BT_SPECIAL )
+	//		{
+	//			switch( players[ i ].cmd.buttons & BT_SPECIALMASK )
+	//			{
+	//			case BTS_PAUSE:
+	//				paused ^= 1;
+	//				if( paused )
+	//					S_PauseSound();
+	//				else
+	//					S_ResumeSound();
+	//				break;
+
+	//			case BTS_SAVEGAME:
+	//				if( !savedescription[ 0 ] )
+	//					strcpy( savedescription, "NET GAME" );
+	//				savegameslot =
+	//					( players[ i ].cmd.buttons & BTS_SAVEMASK ) >> BTS_SAVESHIFT;
+	//				gameaction = ga_savegame;
+	//				break;
+	//			}
+	//		}
+	//	}
+	//}
+
+	//// do main actions
+	//switch( gamestate )
+	//{
+	//case GS_LEVEL:
+	//	P_Ticker();
+	//	ST_Ticker();
+	//	AM_Ticker();
+	//	HU_Ticker();
+	//	break;
+
+	//case GS_INTERMISSION:
+	//	WI_Ticker();
+	//	break;
+
+	//case GS_FINALE:
+	//	F_Ticker();
+	//	break;
+
+	//case GS_DEMOSCREEN:
+	//	D_PageTicker();
+	//	break;
+	//}
+}
+
+
+
+
+void D_DoAdvanceDemo( void )
+{
+	// TODO
+	//players[ consoleplayer ].playerstate = PST_LIVE;  // not reborn
+	//advancedemo = false;
+	//usergame = false;               // no save / end game here
+	//paused = false;
+	//gameaction = ga_nothing;
+
+	//if( gamemode == retail )
+	//	demosequence = ( demosequence + 1 ) % 7;
+	//else
+	//	demosequence = ( demosequence + 1 ) % 6;
+
+	//switch( demosequence )
+	//{
+	//case 0:
+	//	if( gamemode == commercial )
+	//		pagetic = 35 * 11;
+	//	else
+	//		pagetic = 170;
+	//	gamestate = GS_DEMOSCREEN;
+	//	pagename = "TITLEPIC";
+	//	if( gamemode == commercial )
+	//		S_StartMusic( mus_dm2ttl );
+	//	else
+	//		S_StartMusic( mus_intro );
+	//	break;
+	//case 1:
+	//	G_DeferedPlayDemo( "demo1" );
+	//	break;
+	//case 2:
+	//	pagetic = 200;
+	//	gamestate = GS_DEMOSCREEN;
+	//	pagename = "CREDIT";
+	//	break;
+	//case 3:
+	//	G_DeferedPlayDemo( "demo2" );
+	//	break;
+	//case 4:
+	//	gamestate = GS_DEMOSCREEN;
+	//	if( gamemode == commercial )
+	//	{
+	//		pagetic = 35 * 11;
+	//		pagename = "TITLEPIC";
+	//		S_StartMusic( mus_dm2ttl );
+	//	}
+	//	else
+	//	{
+	//		pagetic = 200;
+
+	//		if( gamemode == retail )
+	//			pagename = "CREDIT";
+	//		else
+	//			pagename = "HELP2";
+	//	}
+	//	break;
+	//case 5:
+	//	G_DeferedPlayDemo( "demo3" );
+	//	break;
+	//	// THE DEFINITIVE DOOM Special Edition demo
+	//case 6:
+	//	G_DeferedPlayDemo( "demo4" );
+	//	break;
+	//}
+}
+
+
+
+//
+// G_BuildTiccmd
+// Builds a ticcmd from all of the available inputs
+// or reads it from the demo buffer. 
+// If recording a demo, write it out 
+// 
+void G_BuildTiccmd( ticcmd_t* cmd )
+{
+	// TODO
+	//int		i;
+	//boolean	strafe;
+	//boolean	bstrafe;
+	//int		speed;
+	//int		tspeed;
+	//int		forward;
+	//int		side;
+
+	//ticcmd_t*	base;
+
+	//base = I_BaseTiccmd();		// empty, or external driver
+	//memcpy( cmd, base, sizeof( *cmd ) );
+
+	//cmd->consistancy =
+	//	consistancy[ consoleplayer ][ maketic%BACKUPTICS ];
+
+
+	//strafe = gamekeydown[ key_strafe ] || mousebuttons[ mousebstrafe ]
+	//	|| joybuttons[ joybstrafe ];
+	//speed = gamekeydown[ key_speed ] || joybuttons[ joybspeed ];
+
+	//forward = side = 0;
+
+	//// use two stage accelerative turning
+	//// on the keyboard and joystick
+	//if( joyxmove < 0
+	//	|| joyxmove > 0
+	//	|| gamekeydown[ key_right ]
+	//	|| gamekeydown[ key_left ] )
+	//	turnheld += ticdup;
+	//else
+	//	turnheld = 0;
+
+	//if( turnheld < SLOWTURNTICS )
+	//	tspeed = 2;             // slow turn 
+	//else
+	//	tspeed = speed;
+
+	//// let movement keys cancel each other out
+	//if( strafe )
+	//{
+	//	if( gamekeydown[ key_right ] )
+	//	{
+	//		// fprintf(stderr, "strafe right\n");
+	//		side += sidemove[ speed ];
+	//	}
+	//	if( gamekeydown[ key_left ] )
+	//	{
+	//		//	fprintf(stderr, "strafe left\n");
+	//		side -= sidemove[ speed ];
+	//	}
+	//	if( joyxmove > 0 )
+	//		side += sidemove[ speed ];
+	//	if( joyxmove < 0 )
+	//		side -= sidemove[ speed ];
+
+	//}
+	//else
+	//{
+	//	if( gamekeydown[ key_right ] )
+	//		cmd->angleturn -= angleturn[ tspeed ];
+	//	if( gamekeydown[ key_left ] )
+	//		cmd->angleturn += angleturn[ tspeed ];
+	//	if( joyxmove > 0 )
+	//		cmd->angleturn -= angleturn[ tspeed ];
+	//	if( joyxmove < 0 )
+	//		cmd->angleturn += angleturn[ tspeed ];
+	//}
+
+	//if( gamekeydown[ key_up ] )
+	//{
+	//	// fprintf(stderr, "up\n");
+	//	forward += forwardmove[ speed ];
+	//}
+	//if( gamekeydown[ key_down ] )
+	//{
+	//	// fprintf(stderr, "down\n");
+	//	forward -= forwardmove[ speed ];
+	//}
+	//if( joyymove < 0 )
+	//	forward += forwardmove[ speed ];
+	//if( joyymove > 0 )
+	//	forward -= forwardmove[ speed ];
+	//if( gamekeydown[ key_straferight ] )
+	//	side += sidemove[ speed ];
+	//if( gamekeydown[ key_strafeleft ] )
+	//	side -= sidemove[ speed ];
+
+	//// buttons
+	//cmd->chatchar = HU_dequeueChatChar();
+
+	//if( gamekeydown[ key_fire ] || mousebuttons[ mousebfire ]
+	//	|| joybuttons[ joybfire ] )
+	//	cmd->buttons |= BT_ATTACK;
+
+	//if( gamekeydown[ key_use ] || joybuttons[ joybuse ] )
+	//{
+	//	cmd->buttons |= BT_USE;
+	//	// clear double clicks if hit use button 
+	//	dclicks = 0;
+	//}
+
+	//// chainsaw overrides 
+	//for( i = 0; i < NUMWEAPONS - 1; i++ )
+	//	if( gamekeydown[ '1' + i ] )
+	//	{
+	//		cmd->buttons |= BT_CHANGE;
+	//		cmd->buttons |= i << BT_WEAPONSHIFT;
+	//		break;
+	//	}
+
+	//// mouse
+	//if( mousebuttons[ mousebforward ] )
+	//	forward += forwardmove[ speed ];
+
+	//// forward double click
+	//if( mousebuttons[ mousebforward ] != dclickstate && dclicktime > 1 )
+	//{
+	//	dclickstate = mousebuttons[ mousebforward ];
+	//	if( dclickstate )
+	//		dclicks++;
+	//	if( dclicks == 2 )
+	//	{
+	//		cmd->buttons |= BT_USE;
+	//		dclicks = 0;
+	//	}
+	//	else
+	//		dclicktime = 0;
+	//}
+	//else
+	//{
+	//	dclicktime += ticdup;
+	//	if( dclicktime > 20 )
+	//	{
+	//		dclicks = 0;
+	//		dclickstate = 0;
+	//	}
+	//}
+
+	//// strafe double click
+	//bstrafe =
+	//	mousebuttons[ mousebstrafe ]
+	//	|| joybuttons[ joybstrafe ];
+	//if( bstrafe != dclickstate2 && dclicktime2 > 1 )
+	//{
+	//	dclickstate2 = bstrafe;
+	//	if( dclickstate2 )
+	//		dclicks2++;
+	//	if( dclicks2 == 2 )
+	//	{
+	//		cmd->buttons |= BT_USE;
+	//		dclicks2 = 0;
+	//	}
+	//	else
+	//		dclicktime2 = 0;
+	//}
+	//else
+	//{
+	//	dclicktime2 += ticdup;
+	//	if( dclicktime2 > 20 )
+	//	{
+	//		dclicks2 = 0;
+	//		dclickstate2 = 0;
+	//	}
+	//}
+
+	//forward += mousey;
+	//if( strafe )
+	//	side += mousex * 2;
+	//else
+	//	cmd->angleturn -= mousex * 0x8;
+
+	//mousex = mousey = 0;
+
+	//if( forward > MAXPLMOVE )
+	//	forward = MAXPLMOVE;
+	//else if( forward < -MAXPLMOVE )
+	//	forward = -MAXPLMOVE;
+	//if( side > MAXPLMOVE )
+	//	side = MAXPLMOVE;
+	//else if( side < -MAXPLMOVE )
+	//	side = -MAXPLMOVE;
+
+	//cmd->forwardmove += forward;
+	//cmd->sidemove += side;
+
+	//// special buttons
+	//if( sendpause )
+	//{
+	//	sendpause = false;
+	//	cmd->buttons = BT_SPECIAL | BTS_PAUSE;
+	//}
+
+	//if( sendsave )
+	//{
+	//	sendsave = false;
+	//	cmd->buttons = BT_SPECIAL | BTS_SAVEGAME | ( savegameslot << BTS_SAVESHIFT );
+	//}
+}
