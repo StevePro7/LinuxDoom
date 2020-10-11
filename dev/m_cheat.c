@@ -90,7 +90,8 @@ cht_GetParam
 		c = *p;
 		*( buffer++ ) = c;
 		*( p++ ) = 0;
-	} while( c && *p != 0xff );
+	}
+	while( c && *p != 0xff );
 
 	if( *p == 0xff )
 		*buffer = 0;
