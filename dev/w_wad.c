@@ -168,7 +168,9 @@ void W_AddFile( char *filename )
 		reloadlump = numlumps;
 	}
 
-	if( ( handle = open( filename, O_RDONLY | O_BINARY ) ) == -1 )
+
+	//if( ( handle = open( filename, O_RDONLY | O_BINARY ) ) == -1 )
+	if ( handle = fopen(filename, "rb") == 1)
 	{
 		printf( " couldn't open %s\n", filename );
 		return;

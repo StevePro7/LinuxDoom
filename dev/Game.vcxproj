@@ -273,6 +273,9 @@
     <ClInclude Include="w_wad.h" />
     <ClInclude Include="z_zone.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\wad\doom1.wad" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

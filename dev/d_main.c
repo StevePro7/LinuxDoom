@@ -623,13 +623,15 @@ void IdentifyVersion( void )
 	sprintf( basedefault, "%s/.doomrc", home );
 #endif
 
-	if( M_CheckParm( "-shdev" ) )
+	// stevepro
+	//if( M_CheckParm( "-shdev" ) )
+	if ( true )
 	{
 		gamemode = shareware;
 		devparm = true;
 		D_AddFile( DEVDATA"doom1.wad" );
-		D_AddFile( DEVMAPS"data_se/texture1.lmp" );
-		D_AddFile( DEVMAPS"data_se/pnames.lmp" );
+		//D_AddFile( DEVMAPS"data_se/texture1.lmp" );
+		//D_AddFile( DEVMAPS"data_se/pnames.lmp" );
 		strcpy( basedefault, DEVDATA"default.cfg" );
 		return;
 	}

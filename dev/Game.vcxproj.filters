@@ -396,4 +396,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\wad\doom1.wad">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
