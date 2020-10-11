@@ -30,7 +30,6 @@
 //
 
 
-extern int	mousebfire;
 
 boolean
 M_WriteFile

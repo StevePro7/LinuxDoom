@@ -26,10 +26,6 @@
 
 #include "doomtype.h"
 #include "d_event.h"
-
-#include "hu_stuff.h"
-#include "r_defs.h"
-
 //
 // FINALE
 //
@@ -47,7 +43,6 @@ void F_Drawer( void );
 void F_StartFinale( void );
 
 
-extern	patch_t *hu_font[ HU_FONTSIZE ];
 
 
 #endif
