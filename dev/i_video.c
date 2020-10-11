@@ -51,7 +51,7 @@ int XShmGetEventBase( Display* dpy ); // problems with g++?
 
 #include "doomstat.h"
 #include "i_system.h"
-//#include "v_video.h"			// stevepro TODDO
+#include "v_video.h"
 #include "m_argv.h"
 #include "d_main.h"
 
