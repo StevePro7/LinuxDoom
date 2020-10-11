@@ -875,3 +875,32 @@
 //}
 //
 //
+
+
+//byte*		viewimage;
+int		viewwidth;
+int		scaledviewwidth;
+int		viewheight;
+int		viewwindowx;
+int		viewwindowy;
+//byte*		ylookup[ MAXHEIGHT ];
+//int		columnofs[ MAXWIDTH ];
+
+
+
+//
+// Copy a screen buffer.
+//
+void
+R_VideoErase
+( unsigned	ofs,
+	int		count )
+{
+	// TODO 
+	// LFB copy.
+	// This might not be a good idea if memcpy
+	//  is not optiomal, e.g. byte by byte on
+	//  a 32bit CPU, as GNU GCC/Linux libc did
+	//  at one point.
+	//memcpy( screens[ 0 ] + ofs, screens[ 1 ] + ofs, count );
+}

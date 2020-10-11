@@ -156,6 +156,9 @@
     <ClCompile Include="f_wipe.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="hu_lib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">
