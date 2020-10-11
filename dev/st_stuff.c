@@ -402,3 +402,16 @@ ST_Responder( event_t* ev )
 {
 	return true;
 }
+
+
+void ST_Start( void )
+{
+	// TODO
+	//if( !st_stopped )
+	//	ST_Stop();
+
+	//ST_initData();
+	//ST_createWidgets();
+	//st_stopped = false;
+
+}

@@ -165,6 +165,45 @@
     <ClCompile Include="p_tick.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="p_inter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_ceilng.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_doors.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_enemy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_floor.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_lights.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_maputl.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_plats.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_saveg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_sight.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_spec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_switch.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="p_telept.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">

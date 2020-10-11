@@ -2229,3 +2229,117 @@ void G_ScreenShot( void )
 {
 	gameaction = ga_screenshot;
 }
+
+
+wbstartstruct_t wminfo;               	// parms for world map / intermission 
+
+#define	BODYQUESIZE	32
+
+mobj_t*		bodyque[ BODYQUESIZE ];
+int		bodyqueslot;
+
+void*		statcopy;				// for statistics driver
+
+
+boolean         precache = true;        // if true, load all graphics at start 
+
+
+
+void G_ExitLevel( void )
+{
+	//TODO
+	//secretexit = false;
+	gameaction = ga_completed;
+}
+
+
+
+
+//
+// G_DeathMatchSpawnPlayer 
+// Spawns a player at one of the random death match spots 
+// called at level load and each death 
+//
+void G_DeathMatchSpawnPlayer( int playernum )
+{
+	// TODO
+	//int             i, j;
+	//int				selections;
+
+	//selections = deathmatch_p - deathmatchstarts;
+	//if( selections < 4 )
+	//	I_Error( "Only %i deathmatch spots, 4 required", selections );
+
+	//for( j = 0; j < 20; j++ )
+	//{
+	//	i = P_Random() % selections;
+	//	if( G_CheckSpot( playernum, &deathmatchstarts[ i ] ) )
+	//	{
+	//		deathmatchstarts[ i ].type = playernum + 1;
+	//		P_SpawnPlayer( &deathmatchstarts[ i ] );
+	//		return;
+	//	}
+	//}
+
+	//// no good spot, so the player will probably get stuck 
+	//P_SpawnPlayer( &playerstarts[ playernum ] );
+}
+
+
+
+
+//
+// G_PlayerReborn
+// Called after a player dies 
+// almost everything is cleared and initialized 
+//
+void G_PlayerReborn( int player )
+{
+	// TODO
+	//player_t*	p;
+	//int		i;
+	//int		frags[ MAXPLAYERS ];
+	//int		killcount;
+	//int		itemcount;
+	//int		secretcount;
+
+	//memcpy( frags, players[ player ].frags, sizeof( frags ) );
+	//killcount = players[ player ].killcount;
+	//itemcount = players[ player ].itemcount;
+	//secretcount = players[ player ].secretcount;
+
+	//p = &players[ player ];
+	//memset( p, 0, sizeof( *p ) );
+
+	//memcpy( players[ player ].frags, frags, sizeof( players[ player ].frags ) );
+	//players[ player ].killcount = killcount;
+	//players[ player ].itemcount = itemcount;
+	//players[ player ].secretcount = secretcount;
+
+	//p->usedown = p->attackdown = true;	// don't do anything immediately 
+	//p->playerstate = PST_LIVE;
+	//p->health = MAXHEALTH;
+	//p->readyweapon = p->pendingweapon = wp_pistol;
+	//p->weaponowned[ wp_fist ] = true;
+	//p->weaponowned[ wp_pistol ] = true;
+	//p->ammo[ am_clip ] = 50;
+
+	//for( i = 0; i < NUMAMMO; i++ )
+	//	p->maxammo[ i ] = maxammo[ i ];
+
+}
+
+
+
+// Here's for the german edition.
+void G_SecretExitLevel( void )
+{
+	// TODO
+	//// IF NO WOLF3D LEVELS, NO SECRET EXIT!
+	//if( ( gamemode == commercial )
+	//	&& ( W_CheckNumForName( "map31" ) < 0 ) )
+	//	secretexit = false;
+	//else
+	//	secretexit = true;
+	//gameaction = ga_completed;
+}
