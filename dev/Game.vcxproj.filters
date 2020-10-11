@@ -159,6 +159,9 @@
     <ClCompile Include="am_map.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="st_lib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">
