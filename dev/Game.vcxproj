@@ -175,6 +175,7 @@
     <ClCompile Include="p_mobj.c" />
     <ClCompile Include="p_pspr.c" />
     <ClCompile Include="p_setup.c" />
+    <ClCompile Include="p_tick.c" />
     <ClCompile Include="p_user.c" />
     <ClCompile Include="r_bsp.c" />
     <ClCompile Include="r_data.c" />

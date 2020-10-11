@@ -162,6 +162,9 @@
     <ClCompile Include="st_lib.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="p_tick.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="doomdef.h">
