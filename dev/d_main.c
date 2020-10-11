@@ -451,3 +451,99 @@ void D_StartTitle( void )
 	//demosequence = -1;
 	//D_AdvanceDemo();
 }
+
+
+
+//
+// D_AdvanceDemo
+// Called after each demo or intro demosequence finishes
+//
+void D_AdvanceDemo( void )
+{
+	advancedemo = true;
+}
+
+
+//
+// This cycles through the demo sequences.
+// FIXME - version dependend demo numbers?
+//
+void D_DoAdvanceDemo( void )
+{
+	//TODO
+	//players[ consoleplayer ].playerstate = PST_LIVE;  // not reborn
+	//advancedemo = false;
+	//usergame = false;               // no save / end game here
+	//paused = false;
+	//gameaction = ga_nothing;
+
+	//if( gamemode == retail )
+	//	demosequence = ( demosequence + 1 ) % 7;
+	//else
+	//	demosequence = ( demosequence + 1 ) % 6;
+
+	//switch( demosequence )
+	//{
+	//case 0:
+	//	if( gamemode == commercial )
+	//		pagetic = 35 * 11;
+	//	else
+	//		pagetic = 170;
+	//	gamestate = GS_DEMOSCREEN;
+	//	pagename = "TITLEPIC";
+	//	if( gamemode == commercial )
+	//		S_StartMusic( mus_dm2ttl );
+	//	else
+	//		S_StartMusic( mus_intro );
+	//	break;
+	//case 1:
+	//	G_DeferedPlayDemo( "demo1" );
+	//	break;
+	//case 2:
+	//	pagetic = 200;
+	//	gamestate = GS_DEMOSCREEN;
+	//	pagename = "CREDIT";
+	//	break;
+	//case 3:
+	//	G_DeferedPlayDemo( "demo2" );
+	//	break;
+	//case 4:
+	//	gamestate = GS_DEMOSCREEN;
+	//	if( gamemode == commercial )
+	//	{
+	//		pagetic = 35 * 11;
+	//		pagename = "TITLEPIC";
+	//		S_StartMusic( mus_dm2ttl );
+	//	}
+	//	else
+	//	{
+	//		pagetic = 200;
+
+	//		if( gamemode == retail )
+	//			pagename = "CREDIT";
+	//		else
+	//			pagename = "HELP2";
+	//	}
+	//	break;
+	//case 5:
+	//	G_DeferedPlayDemo( "demo3" );
+	//	break;
+	//	// THE DEFINITIVE DOOM Special Edition demo
+	//case 6:
+	//	G_DeferedPlayDemo( "demo4" );
+	//	break;
+	//}
+}
+
+
+
+//
+// D_PageTicker
+// Handles timing for warped projection
+//
+void D_PageTicker( void )
+{
+	// TDOD
+	//if( --pagetic < 0 )
+	//	D_AdvanceDemo();
+}
