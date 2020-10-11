@@ -1,3 +1,5 @@
+
+
 //// Emacs style mode select   -*- C++ -*- 
 ////-----------------------------------------------------------------------------
 ////
@@ -2169,4 +2171,61 @@ void G_BuildTiccmd( ticcmd_t* cmd )
 	//	sendsave = false;
 	//	cmd->buttons = BT_SPECIAL | BTS_SAVEGAME | ( savegameslot << BTS_SAVESHIFT );
 	//}
+}
+
+
+
+//
+// G_InitNew
+// Can be called by the startup code or the menu task,
+// consoleplayer, displayplayer, playeringame[] should be set. 
+//
+skill_t	d_skill;
+int     d_episode;
+int     d_map;
+
+void
+G_DeferedInitNew
+( skill_t	skill,
+	int		episode,
+	int		map )
+{
+	//TODO
+	//d_skill = skill;
+	//d_episode = episode;
+	//d_map = map;
+	//gameaction = ga_newgame;
+}
+
+
+
+void G_LoadGame( char* name )
+{
+	//TODO
+	//strcpy( savename, name );
+	//gameaction = ga_loadgame;
+}
+
+
+
+//
+// G_SaveGame
+// Called by the menu task.
+// Description is a 24 byte text string 
+//
+void
+G_SaveGame
+( int	slot,
+	char*	description )
+{
+	// TODO
+	//savegameslot = slot;
+	//strcpy( savedescription, description );
+	sendsave = true;
+}
+
+
+void G_ScreenShot( void )
+{
+	gameaction = ga_screenshot;
 }

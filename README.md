@@ -1,6 +1,6 @@
 # LinuxDoom
 Test repository for id software Linux Doom source code
-
+10/10/2020
 
 Doom Retro
 D:\Github\bradharding\doomretro
@@ -59,3 +59,10 @@ e.g. file open
 Add to preprocessor directives in project properties
 C/C++ | PreProcessor
 _CRT_SECURE_NO_WARNINGS
+
+
+
+11/10/2020
+m_menu.c
+M_ResponderEvent()
+menu actions respond to events key press etc.

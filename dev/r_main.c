@@ -1005,3 +1005,15 @@ R_PointToAngle2
 
 	return R_PointToAngle( x2, y2 );
 }
+
+
+void
+R_SetViewSize
+( int		blocks,
+	int		detail )
+{
+	// TODO
+	//setsizeneeded = true;
+	//setblocks = blocks;
+	//setdetail = detail;
+}

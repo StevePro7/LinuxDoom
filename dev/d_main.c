@@ -439,3 +439,15 @@ void D_DoomMain( void )
 	devparm = M_CheckParm( "-devparm" );
 	
 }
+
+
+//
+// D_StartTitle
+//
+void D_StartTitle( void )
+{
+	// TODO
+	//gameaction = ga_nothing;
+	//demosequence = -1;
+	//D_AdvanceDemo();
+}
