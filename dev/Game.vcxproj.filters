@@ -54,9 +54,6 @@
     <ClCompile Include="main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="p_tick.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="wi_stuff.c">
       <Filter>Source Files</Filter>
     </ClCompile>
