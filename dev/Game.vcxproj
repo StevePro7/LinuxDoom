@@ -144,7 +144,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="an_map.c" />
     <ClCompile Include="doomdef.c" />
     <ClCompile Include="doomstat.c" />
     <ClCompile Include="dstrings.c" />
