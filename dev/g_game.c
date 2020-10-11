@@ -2343,3 +2343,34 @@ void G_SecretExitLevel( void )
 	//	secretexit = true;
 	//gameaction = ga_completed;
 }
+
+
+
+//
+// G_WorldDone 
+//
+void G_WorldDone( void )
+{
+	//TODO
+	//gameaction = ga_worlddone;
+
+	//if( secretexit )
+	//	players[ consoleplayer ].didsecret = true;
+
+	//if( gamemode == commercial )
+	//{
+	//	switch( gamemap )
+	//	{
+	//	case 15:
+	//	case 31:
+	//		if( !secretexit )
+	//			break;
+	//	case 6:
+	//	case 11:
+	//	case 20:
+	//	case 30:
+	//		F_StartFinale();
+	//		break;
+	//	}
+	//}
+}
