@@ -102,7 +102,7 @@ static boolean		message_nottobefuckedwith;
 static hu_stext_t	w_message;
 static int		message_counter;
 
-//extern int		showMessages;		// stevepro
+extern int		showMessages;
 extern boolean		automapactive;
 
 static boolean		headsupactive = false;
@@ -504,8 +504,6 @@ void HU_Erase( void )
 
 void HU_Ticker( void )
 {
-	// stevepro
-	int showMessages = 0;
 
 	int i, rc;
 	char c;

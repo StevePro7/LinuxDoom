@@ -325,8 +325,7 @@ void M_SaveDefaults( void )
 		{
 			v = *defaults[ i ].location;
 			fprintf( f, "%s\t\t%i\n", defaults[ i ].name, v );
-		}
-		else {
+		} else {
 			fprintf( f, "%s\t\t\"%s\"\n", defaults[ i ].name,
 				*( char ** ) ( defaults[ i ].location ) );
 		}

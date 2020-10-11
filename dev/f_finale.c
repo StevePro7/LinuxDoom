@@ -1,3 +1,5 @@
+#pragma warning(disable : 4018)
+
 // Emacs style mode select   -*- C++ -*- 
 //-----------------------------------------------------------------------------
 //
@@ -21,7 +23,6 @@
 //
 //-----------------------------------------------------------------------------
 
-#pragma warning(disable : 4018)
 
 static const char
 rcsid[] = "$Id: f_finale.c,v 1.5 1997/02/03 21:26:34 b1 Exp $";
@@ -42,7 +43,6 @@ rcsid[] = "$Id: f_finale.c,v 1.5 1997/02/03 21:26:34 b1 Exp $";
 
 #include "doomstat.h"
 #include "r_state.h"
-
 
 // ?
 //#include "doomstat.h"
@@ -257,7 +257,7 @@ void F_Ticker( void )
 //
 
 #include "hu_stuff.h"
-patch_t *hu_font[ HU_FONTSIZE ];
+extern patch_t *hu_font[ HU_FONTSIZE ];
 
 
 void F_TextWrite( void )
