@@ -46,11 +46,6 @@ id software
 E:\GitHub\StevePro7\Blogger\Doom\linuxdoom-1.10
 D:\Github\id-software\DOOM\linuxdoom-1.10
 
-
-Entry point
-i_main.c
-
-
 FILE
 #include <stdio.h>
 
@@ -66,3 +61,19 @@ _CRT_SECURE_NO_WARNINGS
 m_menu.c
 M_ResponderEvent()
 menu actions respond to events key press etc.
+
+
+
+ENTRY POINT
+01.
+i_main.c
+E:\GitHub\StevePro7\LinuxDoom\dev\
+int main( int argc, char**	argv )
+D_DoomMain();
+
+
+02.
+doomretro.c
+D:\Github\bradharding\doomretro\src\
+int main(int argc, char **argv)
+D_DoomMain();
