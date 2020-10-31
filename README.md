@@ -34,7 +34,10 @@ https://www.siliconrepublic.com/video/john-romero-doom-wolfenstein-3d
 Game Engine Black Book: DOOM
 https://archive.org/details/gebbdoome/page/394/mode/2up
 
+Github
 https://github.com/fabiensanglard/gebbdoom
+
+Download book!
 https://fabiensanglard.net/gebbdoom.pdf
 
 DoomEngine.pdf
