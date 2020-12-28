@@ -1,5 +1,30 @@
 # LinuxDoom
 Test repository for id software Linux Doom source code
+
+28/12/2020
+Launch Linux	Ubuntu 19.04
+git clone https://github.com/StevePro7/LinuxDoom
+cd /path_to_LinuxDoom
+cd prboom-plus-2.5.1.3_VScode
+
+chmod +x build.sh
+chmod +x configure
+./configure
+make
+cd src
+./prboom-plus
+
+Launch VS Code
+open folder
+prboom-plus-2.5.1.3_VScode
+
+Set break point
+i_main.c
+d_main.c
+
+Press F5 to debug step thru the code
+
+
 10/10/2020
 
 Doom Retro
