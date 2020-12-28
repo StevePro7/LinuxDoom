@@ -3,6 +3,9 @@ Test repository for id software Linux Doom source code
 10/10/2020
 
 Doom Retro
+E:\Github\StevePro7\RetroDoom
+
+
 D:\Github\bradharding\doomretro
 
 VS2015
